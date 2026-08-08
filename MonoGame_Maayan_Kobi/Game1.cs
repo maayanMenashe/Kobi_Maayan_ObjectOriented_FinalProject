@@ -17,7 +17,7 @@ public class Game1 : Game
     public static Vector2 _screenCenter;
 
     private Player player = null;
-    private Enemy enemy = null;
+    //private Enemy enemy = null;
 
     private SpriteFont _fontOswald;
     
@@ -88,8 +88,8 @@ public class Game1 : Game
     {
         AudioManager.PlaySong("theme");
         
-        enemy = SceneManager.Create<Enemy>();
-        enemy.PlayAnimation();
+        //enemy = SceneManager.Create<Enemy>();
+        //enemy.PlayAnimation();
         
         player = SceneManager.Create<Player>();
         player.PlayAnimation();

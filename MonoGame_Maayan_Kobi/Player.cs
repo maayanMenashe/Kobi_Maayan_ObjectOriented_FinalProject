@@ -7,8 +7,6 @@ namespace MonoGame_Maayan_Kobi;
 
 public class Player : Animation
 {
-    bool IsRKeyPressed = false;
-    float speedRotation = 0;
     float speedMovement = 300;
     public Collider collider { get; }
 
@@ -35,35 +33,25 @@ public class Player : Animation
     {
         float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
         
-        if (Keyboard.GetState().IsKeyDown(Keys.R) && !IsRKeyPressed)
-        {
-            // R was pressed in this frame
-            speedRotation = 500;
-        }
         
         if (Keyboard.GetState().IsKeyDown(Keys.D))
         {
             effects = SpriteEffects.FlipHorizontally;
             tm.position += new Vector2(speedMovement * deltaTime, 0);
         }
-        
-        if (Keyboard.GetState().IsKeyDown(Keys.A))
+        else if (Keyboard.GetState().IsKeyDown(Keys.A))
         {
             effects = SpriteEffects.None;
             tm.position += new Vector2(-speedMovement * deltaTime, 0);
         }
-        
-        if (Keyboard.GetState().IsKeyDown(Keys.S))
+        else if (Keyboard.GetState().IsKeyDown(Keys.S))
         {
             tm.position += new Vector2(0, speedMovement * deltaTime);
         }
-        
-        if (Keyboard.GetState().IsKeyDown(Keys.W))
+        else if (Keyboard.GetState().IsKeyDown(Keys.W))
         {
             tm.position += new Vector2(0, -speedMovement * deltaTime);
         }
-
-        IsRKeyPressed =  Keyboard.GetState().IsKeyDown(Keys.R);
         
         if (Keyboard.GetState().IsKeyDown(Keys.NumPad1))
         {
@@ -75,8 +63,6 @@ public class Player : Animation
             AudioManager.IsPaused = false;
         }
         
-        tm.rotation = (float)gameTime.TotalGameTime.TotalSeconds * speedRotation;
-
         base.Update(gameTime);
         
         if (isColliding)
