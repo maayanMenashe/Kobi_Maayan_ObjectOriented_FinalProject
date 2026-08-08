@@ -143,3 +143,57 @@ D:\Unity Projects\MonoGame2026_Heb\MonoGame2026_Heb\bin\Debug\net9.0\Content\Aud
 D:\Unity Projects\MonoGame2026_Heb\MonoGame2026_Heb\bin\Debug\net9.0\Content\Audio\Music\theme.xnb
 D:\Unity Projects\MonoGame2026_Heb\MonoGame2026_Heb\bin\Debug\net9.0\Content\Audio\SFX\bounce.xnb
 D:\Unity Projects\MonoGame2026_Heb\MonoGame2026_Heb\bin\Debug\net9.0\Content\Audio\SFX\collect.xnb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\obj\Debug\net9.0\mgcb.tool.restore
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\obj\Debug\net9.0\MonoGame2026_Heb.dll
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\obj\Debug\net9.0\refint\MonoGame2026_Heb.dll
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\obj\Debug\net9.0\MonoGame2026_Heb.pdb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\Content\Audio\Music\theme.ogg
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\Content\Audio\Music\theme.xnb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\Content\Audio\SFX\bounce.xnb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\Content\Audio\SFX\collect.xnb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\Content\Fonts\Oswald.xnb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\Content\Images\B4_s3.xnb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\Content\Images\B4_s5.xnb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\Content\Images\Bird1_1.xnb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\Content\Images\Bird1_3.xnb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\Content\Images\Bird2 Duck_1.xnb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\Content\Images\Bird2 Duck_3.xnb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\Content\Images\Bird3_Egret2.xnb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\Content\Images\Bird3_Egret4.xnb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\Content\Images\logo.xnb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\Content\Images\pacman.xnb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\Content\Images\pixel.xnb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\Content\Images\pong-atlas.xnb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\MonoGame2026_Heb.exe
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\MonoGame2026_Heb.deps.json
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\MonoGame2026_Heb.runtimeconfig.json
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\MonoGame2026_Heb.dll
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\MonoGame2026_Heb.pdb
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\MonoGame.Framework.dll
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\NVorbis.dll
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\runtimes\android-arm\native\libopenal.so
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\runtimes\android-arm64\native\libopenal.so
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\runtimes\android-x64\native\libopenal.so
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\runtimes\android-x86\native\libopenal.so
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\runtimes\ios-arm64\native\libopenal.a
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\runtimes\iossimulator-arm64\native\libopenal.a
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\runtimes\iossimulator-x64\native\libopenal.a
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\runtimes\linux-arm64\native\libopenal.so
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\runtimes\linux-x64\native\libopenal.so
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\runtimes\osx\native\libopenal.dylib
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\runtimes\win-arm64\native\openal.dll
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\runtimes\win-x64\native\openal.dll
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\runtimes\linux-arm64\native\libSDL2-2.0.so.0
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\runtimes\osx\native\libSDL2-2.0.0.dylib
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\runtimes\win-arm64\native\SDL2.dll
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\bin\Debug\net9.0\runtimes\win-x64\native\SDL2.dll
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\obj\Debug\net9.0\MonoGame2026_Heb.csproj.AssemblyReference.cache
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\obj\Debug\net9.0\MonoGame2026_Heb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\obj\Debug\net9.0\MonoGame2026_Heb.AssemblyInfoInputs.cache
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\obj\Debug\net9.0\MonoGame2026_Heb.AssemblyInfo.cs
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\obj\Debug\net9.0\MonoGame2026_Heb.csproj.CoreCompileInputs.cache
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\obj\Debug\net9.0\MonoGame2026_Heb.sourcelink.json
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\obj\Debug\net9.0\MonoGame.25986CF7.Up2Date
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\obj\Debug\net9.0\MonoGame2026_Heb.genruntimeconfig.cache
+C:\Users\pokem\RiderProjects\MonoGame_Maayan_Kobi\MonoGame2026_Heb\obj\Debug\net9.0\ref\MonoGame2026_Heb.dll
