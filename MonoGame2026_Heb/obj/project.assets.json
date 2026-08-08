@@ -315,11 +315,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pokem\\RiderProjects\\MonoGame2026_Newest\\MonoGame2026_Heb\\MonoGame2026_Heb.csproj",
+      "projectUniqueName": "C:\\Users\\pokem\\RiderProjects\\MonoGame_Maayan_Kobi\\MonoGame2026_Heb\\MonoGame2026_Heb.csproj",
       "projectName": "MonoGame2026_Heb",
-      "projectPath": "C:\\Users\\pokem\\RiderProjects\\MonoGame2026_Newest\\MonoGame2026_Heb\\MonoGame2026_Heb.csproj",
+      "projectPath": "C:\\Users\\pokem\\RiderProjects\\MonoGame_Maayan_Kobi\\MonoGame2026_Heb\\MonoGame2026_Heb.csproj",
       "packagesPath": "C:\\Users\\pokem\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pokem\\RiderProjects\\MonoGame2026_Newest\\MonoGame2026_Heb\\obj\\",
+      "outputPath": "C:\\Users\\pokem\\RiderProjects\\MonoGame_Maayan_Kobi\\MonoGame2026_Heb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pokem\\AppData\\Roaming\\NuGet\\NuGet.Config",
