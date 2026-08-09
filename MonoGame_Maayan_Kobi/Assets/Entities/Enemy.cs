@@ -5,7 +5,6 @@ namespace MonoGame_Maayan_Kobi;
 public class Enemy : Animation
 {
     public Collider collider { get; }
-    //test
     
     public Enemy() : base("temp-player")
     {
@@ -22,7 +21,11 @@ public class Enemy : Animation
         tm.position.Y -= 300;
         tm.scale = new Vector2(0.3f, 0.3f);
     }
-    protected virtual void MovementLogic(GameTime gameTime)
+    public override void Update(GameTime gameTime)
+    {
+        Action(gameTime);
+    }
+    protected virtual void Action(GameTime gameTime) //The action function
     {
     }
 }

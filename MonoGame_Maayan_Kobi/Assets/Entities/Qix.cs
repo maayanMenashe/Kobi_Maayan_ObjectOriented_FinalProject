@@ -12,14 +12,11 @@ namespace MonoGame_Maayan_Kobi
     public class Qix: Enemy
     {
         float speedMovement = 300;
-        public override void Update(GameTime gameTime)
-        {
-            MovementLogic(gameTime);
-        }
-        protected override void MovementLogic(GameTime gameTime)
+        protected override void Action(GameTime gameTime)
         {
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            tm.position += new Vector2(0, speedMovement * deltaTime);
+            tm.position += new Vector2(0, speedMovement * deltaTime); 
+            //insert collision logic here
         }
     }
 }

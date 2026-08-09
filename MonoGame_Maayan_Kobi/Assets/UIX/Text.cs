@@ -15,12 +15,10 @@ public class Text : IUpdatable, IDrawable
     
     public virtual void Start()
     {
-       
     }
 
     public virtual void Update(GameTime gameTime)
     {
-        
     }
 
     public void Draw(SpriteBatch spriteBatch)
