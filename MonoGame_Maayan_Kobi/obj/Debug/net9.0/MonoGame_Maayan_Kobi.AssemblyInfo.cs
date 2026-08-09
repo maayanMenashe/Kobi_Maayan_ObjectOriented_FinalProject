@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MonoGame_Maayan_Kobi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c221d91a9d6813747e3547f9b5da85909e26e982")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c19e73072ba8647b7801a5a42864a7e292c83355")]
 [assembly: System.Reflection.AssemblyProductAttribute("MonoGame_Maayan_Kobi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MonoGame_Maayan_Kobi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

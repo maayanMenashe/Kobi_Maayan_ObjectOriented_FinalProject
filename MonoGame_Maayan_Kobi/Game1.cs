@@ -49,7 +49,7 @@ public class Game1 : Game
         _graphics.PreferredBackBufferWidth = 1920;
         _graphics.PreferredBackBufferHeight = 1080;
 
-        _graphics.IsFullScreen = true;
+        _graphics.IsFullScreen = false;
         
         _screenCenter =  new Vector2(
             _graphics.PreferredBackBufferWidth * 0.5f,
@@ -66,19 +66,22 @@ public class Game1 : Game
 
     protected override void LoadContent()
     {
-        
+        #region AudioManager init
         AudioManager.AddSong("theme", "Audio/Music/theme");
         AudioManager.AddSoundEffect("collect", "Audio/SFX/collect");
         AudioManager.AddSoundEffect("bounce", "Audio/SFX/bounce");
-        
-        
+        #endregion
+
+
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+        #region SpriteManager init
         SpriteManager.AddSprite("orangeBird","Images/Bird1_1", 4,4);
         SpriteManager.AddSprite("duck","Images/Bird2 Duck_1", 4,4);
         SpriteManager.AddSprite("egret","Images/Bird3_Egret4", 4,4);
         SpriteManager.AddSprite("Pixel","Images/pixel");
- 
+        #endregion
+
         mousePositionText.font = Content.Load<SpriteFont>("Fonts/Oswald");
         
         Start();
@@ -103,8 +106,10 @@ public class Game1 : Game
 
     bool ShouldExitApplication()
     {
+        #region MonoGame Defaults
         return GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                Keyboard.GetState().IsKeyDown(Keys.Escape);
+        #endregion
     }
 
     protected override void Update(GameTime gameTime)

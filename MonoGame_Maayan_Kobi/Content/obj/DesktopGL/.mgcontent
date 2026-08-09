@@ -4,25 +4,25 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Audio/Music/theme.ogg</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Audio/SFX/bounce.wav</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Audio/SFX/collect.wav</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Fonts/Oswald.spritefont</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Images/B4_s3.png</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Images/B4_s5.png</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Images/Bird1_1.png</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Images/Bird1_3.png</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Images/Bird2 Duck_1.png</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Images/Bird2 Duck_3.png</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Images/Bird3_Egret2.png</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Images/Bird3_Egret4.png</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Images/logo.png</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Images/pacman.png</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Images/pixel.png</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Images/pong-atlas.png</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Sprites/PH_Background.png</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Sprites/PH_Border.png</File>
-    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame2026_Heb/Content/Sprites/PH_Player.png</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Audio/Music/theme.ogg</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Audio/SFX/bounce.wav</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Audio/SFX/collect.wav</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Fonts/Oswald.spritefont</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Images/B4_s3.png</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Images/B4_s5.png</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Images/Bird1_1.png</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Images/Bird1_3.png</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Images/Bird2 Duck_1.png</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Images/Bird2 Duck_3.png</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Images/Bird3_Egret2.png</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Images/Bird3_Egret4.png</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Images/logo.png</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Images/pacman.png</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Images/pixel.png</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Images/pong-atlas.png</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Sprites/PH_Background.png</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Sprites/PH_Border.png</File>
+    <File>C:/Users/kobic/Documents/GitHub/Kobi_Maayan_ObjectOriented_FinalProject/MonoGame_Maayan_Kobi/Content/Sprites/PH_Player.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
