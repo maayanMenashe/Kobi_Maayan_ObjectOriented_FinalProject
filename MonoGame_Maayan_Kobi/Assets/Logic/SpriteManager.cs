@@ -13,10 +13,8 @@ public class SpriteManager
         if (!sprites.ContainsKey(spriteName))
         {
             sprites[spriteName] = new Spritesheet();
-            
             sprites[spriteName].texture =
                 ResourcesManager<Texture2D>.LoadResource(spriteName, fileName);
-           
             sprites[spriteName].columns = columns;
             sprites[spriteName].rows = rows;
         }

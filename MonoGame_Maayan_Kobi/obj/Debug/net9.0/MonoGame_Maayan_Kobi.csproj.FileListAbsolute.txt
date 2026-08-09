@@ -57,18 +57,6 @@ C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame
 C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Audio\SFX\bounce.xnb
 C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Audio\SFX\collect.xnb
 C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Fonts\Oswald.xnb
-C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Images\B4_s3.xnb
-C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Images\B4_s5.xnb
-C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Images\Bird1_1.xnb
-C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Images\Bird1_3.xnb
-C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Images\Bird2 Duck_1.xnb
-C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Images\Bird2 Duck_3.xnb
-C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Images\Bird3_Egret2.xnb
-C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Images\Bird3_Egret4.xnb
-C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Images\logo.xnb
-C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Images\pacman.xnb
-C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Images\pixel.xnb
-C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Images\pong-atlas.xnb
 C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Sprites\PH_Background.xnb
 C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Sprites\PH_Border.xnb
 C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Sprites\PH_Player.xnb
@@ -109,3 +97,5 @@ C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame
 C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\obj\Debug\net9.0\MonoGame_Maayan_Kobi.pdb
 C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\obj\Debug\net9.0\MonoGame_Maayan_Kobi.genruntimeconfig.cache
 C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\obj\Debug\net9.0\ref\MonoGame_Maayan_Kobi.dll
+C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Sprites\PH_PlayArea.xnb
+C:\Users\kobic\Documents\GitHub\Kobi_Maayan_ObjectOriented_FinalProject\MonoGame_Maayan_Kobi\bin\Debug\net9.0\Content\Sprites\pixel.xnb
