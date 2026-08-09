@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 3,
   "targets": {
     "net9.0": {
       "MonoGame.Content.Builder.Task/3.8.5": {
@@ -310,19 +310,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kobic\\.nuget\\packages\\": {}
+    "C:\\Users\\pokem\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kobic\\Documents\\GitHub\\Kobi_Maayan_ObjectOriented_FinalProject\\MonoGame_Maayan_Kobi\\MonoGame_Maayan_Kobi.csproj",
+      "projectUniqueName": "C:\\Users\\pokem\\RiderProjects\\MonoGame_Maayan_Kobi\\MonoGame_Maayan_Kobi\\MonoGame_Maayan_Kobi.csproj",
       "projectName": "MonoGame_Maayan_Kobi",
-      "projectPath": "C:\\Users\\kobic\\Documents\\GitHub\\Kobi_Maayan_ObjectOriented_FinalProject\\MonoGame_Maayan_Kobi\\MonoGame_Maayan_Kobi.csproj",
-      "packagesPath": "C:\\Users\\kobic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kobic\\Documents\\GitHub\\Kobi_Maayan_ObjectOriented_FinalProject\\MonoGame_Maayan_Kobi\\obj\\",
+      "projectPath": "C:\\Users\\pokem\\RiderProjects\\MonoGame_Maayan_Kobi\\MonoGame_Maayan_Kobi\\MonoGame_Maayan_Kobi.csproj",
+      "packagesPath": "C:\\Users\\pokem\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pokem\\RiderProjects\\MonoGame_Maayan_Kobi\\MonoGame_Maayan_Kobi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kobic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pokem\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -334,7 +334,6 @@
       },
       "frameworks": {
         "net9.0": {
-          "framework": "net9.0",
           "targetAlias": "net9.0",
           "projectReferences": {}
         }
@@ -349,11 +348,10 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.300"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net9.0": {
-        "framework": "net9.0",
         "targetAlias": "net9.0",
         "dependencies": {
           "MonoGame.Content.Builder.Task": {
@@ -379,19 +377,19 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[9.0.18, 9.0.18]"
+            "version": "[9.0.11, 9.0.11]"
           },
           {
             "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[9.0.18, 9.0.18]"
+            "version": "[9.0.11, 9.0.11]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[9.0.18, 9.0.18]"
+            "version": "[9.0.11, 9.0.11]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[9.0.18, 9.0.18]"
+            "version": "[9.0.11, 9.0.11]"
           }
         ],
         "frameworkReferences": {
@@ -399,7 +397,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
