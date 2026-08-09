@@ -8,10 +8,12 @@ namespace MonoGame_Maayan_Kobi;
 public class Player : Animation
 {
     float speedMovement = 300;
+    int lives;
     public Collider collider { get; }
 
     bool isColliding = false;
     Vector2 prevPosition = Vector2.Zero;
+
 
     public Player() : base("temp-player")
     {
