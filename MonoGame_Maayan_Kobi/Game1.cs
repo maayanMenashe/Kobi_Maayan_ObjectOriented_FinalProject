@@ -8,27 +8,23 @@ namespace MonoGame_Maayan_Kobi;
 
 public class Game1 : Game
 {
+    //
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-
-    Texture2D _logo;
-    Texture2D _pongAtlas;
-    
+    //
     public static Vector2 _screenCenter;
-
+    //
     private Player player = null;
-    //private Enemy enemy = null;
-
+    private Enemy enemy = null;
+    //
     private SpriteFont _fontOswald;
-    
+    //
     MousePositionText mousePositionText = new MousePositionText();
 
-    #region ResourcesManager
-    
+    #region ResourcesManager   
     private ResourcesManager<Texture2D> textureManager;
     private ResourcesManager<Song> songManager;
     private ResourcesManager<SoundEffect> soundEffectManager;
-
     #endregion
     
     
@@ -66,17 +62,19 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         #region AudioManager init
-        //AudioManager.AddSong("theme", "Audio/Music/theme");
-        //AudioManager.AddSoundEffect("collect", "Audio/SFX/collect");
-        //AudioManager.AddSoundEffect("bounce", "Audio/SFX/bounce");
+        AudioManager.AddSong("theme", "Audio/Music/theme");
+        AudioManager.AddSoundEffect("collect", "Audio/SFX/collect");
+        AudioManager.AddSoundEffect("bounce", "Audio/SFX/bounce");
         #endregion
 
 
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
         #region SpriteManager init
+        SpriteManager.AddSprite("Pixel", "Sprites/pixel");
         SpriteManager.AddSprite("temp-background", "Sprites/PH_Background");
         SpriteManager.AddSprite("temp-border", "Sprites/PH_Border");
+        SpriteManager.AddSprite("temp-player", "Sprites/PH_Player");
         #endregion
 
         mousePositionText.font = Content.Load<SpriteFont>("Fonts/Oswald");
@@ -86,9 +84,9 @@ public class Game1 : Game
 
     void Start()
     {
-        AudioManager.PlaySong("theme");
+        //AudioManager.PlaySong("theme");
         
-        //enemy = SceneManager.Create<Enemy>();
+        enemy = SceneManager.Create<Enemy>();
         //enemy.PlayAnimation();
         
         player = SceneManager.Create<Player>();
@@ -96,8 +94,8 @@ public class Game1 : Game
         
         SceneManager.Instance.Start();
 
-        player.collider.RegisterOnCollision(player.OnCollision);
-        player.collider.RegisterOnTrigger(player.OnTrigger);
+        //player.collider.RegisterOnCollision(player.OnCollision);
+        //player.collider.RegisterOnTrigger(player.OnTrigger);
 
     }
 

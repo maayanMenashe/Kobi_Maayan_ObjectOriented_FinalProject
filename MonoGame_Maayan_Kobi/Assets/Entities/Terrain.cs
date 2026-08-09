@@ -8,7 +8,7 @@ namespace MonoGame_Maayan_Kobi
 {
     public class Terrain : Sprite
     {
-        public Terrain() : base("PH_Background")
+        public Terrain() : base("temp-background")
         {
         }
     }
