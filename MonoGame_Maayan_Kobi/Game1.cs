@@ -40,7 +40,6 @@ public class Game1 : Game
         textureManager = new(Content);
         songManager = new(Content);
         soundEffectManager = new(Content);
-        
         spriteManager = new SpriteManager();
         
         Content.RootDirectory = "Content";
@@ -67,19 +66,15 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         #region AudioManager init
-        AudioManager.AddSong("theme", "Audio/Music/theme");
-        AudioManager.AddSoundEffect("collect", "Audio/SFX/collect");
-        AudioManager.AddSoundEffect("bounce", "Audio/SFX/bounce");
+        //AudioManager.AddSong("theme", "Audio/Music/theme");
+        //AudioManager.AddSoundEffect("collect", "Audio/SFX/collect");
+        //AudioManager.AddSoundEffect("bounce", "Audio/SFX/bounce");
         #endregion
 
 
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
         #region SpriteManager init
-        SpriteManager.AddSprite("orangeBird","Images/Bird1_1", 4,4);
-        SpriteManager.AddSprite("duck","Images/Bird2 Duck_1", 4,4);
-        SpriteManager.AddSprite("egret","Images/Bird3_Egret4", 4,4);
-        SpriteManager.AddSprite("Pixel","Images/pixel");
         SpriteManager.AddSprite("temp-background", "Sprites/PH_Background");
         SpriteManager.AddSprite("temp-border", "Sprites/PH_Border");
         #endregion
@@ -108,10 +103,8 @@ public class Game1 : Game
 
     bool ShouldExitApplication()
     {
-        #region MonoGame Defaults
         return GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                Keyboard.GetState().IsKeyDown(Keys.Escape);
-        #endregion
     }
 
     protected override void Update(GameTime gameTime)
