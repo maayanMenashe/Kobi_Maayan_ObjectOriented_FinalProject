@@ -13,7 +13,7 @@ public class Player : Animation
     bool isColliding = false;
     Vector2 prevPosition = Vector2.Zero;
 
-    public Player() : base("orangeBird")
+    public Player() : base("temp-player")
     {
         collider = SceneManager.Create<Collider>();
         collider.Parent = this;

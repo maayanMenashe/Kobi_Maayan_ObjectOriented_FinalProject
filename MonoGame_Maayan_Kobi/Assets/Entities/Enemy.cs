@@ -7,7 +7,7 @@ public class Enemy : Animation
     public Collider collider { get; }
     //test
     
-    public Enemy() : base("egret")
+    public Enemy() : base("temp-player")
     {
         collider = SceneManager.Create<Collider>();
         collider.Parent = this;
@@ -22,8 +22,7 @@ public class Enemy : Animation
         tm.position.Y -= 300;
         tm.scale = new Vector2(0.3f, 0.3f);
     }
-    void MovementLogic()
+    protected virtual void MovementLogic(GameTime gameTime)
     {
-
     }
 }
