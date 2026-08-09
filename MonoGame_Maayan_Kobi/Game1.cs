@@ -80,6 +80,8 @@ public class Game1 : Game
         SpriteManager.AddSprite("duck","Images/Bird2 Duck_1", 4,4);
         SpriteManager.AddSprite("egret","Images/Bird3_Egret4", 4,4);
         SpriteManager.AddSprite("Pixel","Images/pixel");
+        SpriteManager.AddSprite("temp-background", "Sprites/PH_Background");
+        SpriteManager.AddSprite("temp-border", "Sprites/PH_Border");
         #endregion
 
         mousePositionText.font = Content.Load<SpriteFont>("Fonts/Oswald");

@@ -22,4 +22,8 @@ public class Enemy : Animation
         tm.position.Y -= 300;
         tm.scale = new Vector2(0.3f, 0.3f);
     }
+    void MovementLogic()
+    {
+
+    }
 }
