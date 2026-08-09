@@ -16,10 +16,14 @@ public class Game1 : Game
     //
     private Player player = null;
     private Qix enemy = null;
+    private Board board = null;
     //
     private SpriteFont _fontOswald;
     //
     MousePositionText mousePositionText = new MousePositionText();
+    //
+    public const int ScreenWidth = 1920;
+    public const int ScreenHeight = 1080;
 
     #region ResourcesManager   
     private ResourcesManager<Texture2D> textureManager;
@@ -54,9 +58,8 @@ public class Game1 : Game
 
     protected override void Initialize()
     {
-        // TODO: Add your initialization logic here
-
         base.Initialize();
+        
     }
 
     protected override void LoadContent()
@@ -75,6 +78,7 @@ public class Game1 : Game
         SpriteManager.AddSprite("temp-background", "Sprites/PH_Background");
         SpriteManager.AddSprite("temp-border", "Sprites/PH_Border");
         SpriteManager.AddSprite("temp-player", "Sprites/PH_Player");
+        SpriteManager.AddSprite("captured-area", "Sprites/Result_TestCard");
         #endregion
 
         mousePositionText.font = Content.Load<SpriteFont>("Fonts/Oswald");
@@ -91,6 +95,9 @@ public class Game1 : Game
         
         player = SceneManager.Create<Player>();
         player.PlayAnimation();
+        
+        board = SceneManager.Create<Board>();
+
         
         SceneManager.Instance.Start();
 

@@ -9,15 +9,15 @@ public class Spritesheet
     public int rows { get; set; }
     public Texture2D texture { get; set; }
 
-    public Rectangle this[int x, int y]
+    public Rectangle this[int row, int column]
     {
         get
         {
             int width = texture.Width / columns;
             int height = texture.Height / rows;
 
-            int pos_x = width * x;
-            int pos_y = height * y;
+            int pos_x = width * column;
+            int pos_y = height * row;
             
             return new Rectangle(
                 pos_x,
