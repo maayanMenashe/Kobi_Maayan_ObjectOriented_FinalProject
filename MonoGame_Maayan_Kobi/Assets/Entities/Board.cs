@@ -1,0 +1,121 @@
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
+namespace MonoGame_Maayan_Kobi;
+
+public class Board : Sprite
+{
+    
+    #region StatusEnum
+
+    public enum Status
+    {
+        Uncaptured,
+        Touched,
+        Enemy,
+        Captured
+    }
+
+    #endregion
+
+    #region Variables
+
+    // const
+    private const int numOfRows = 20;
+    private const int numOfColumns = 20;
+    private const string spriteName = "captured-area";
+    
+    // Private
+    public static float singleSquareWidth;
+    public static float singleSquareHeight;
+    private Spritesheet capturedBackground = new Spritesheet();
+    
+    // Public
+    
+    
+    // The Board
+    public static Status[,] grid = new Status[numOfRows,numOfColumns];
+    public static HashSet<Vector2> notCaptured = new HashSet<Vector2>();
+    public static HashSet<Vector2> captured = new HashSet<Vector2>();
+
+    
+    #endregion
+
+    #region Constructor
+
+    public Board() : base(spriteName)
+    {
+        InitBoard();
+
+        capturedBackground.rows = numOfRows;
+        capturedBackground.columns = numOfColumns;
+        capturedBackground.texture = texture;
+        singleSquareWidth = Game1.ScreenWidth / numOfColumns;
+        singleSquareHeight = Game1.ScreenHeight / numOfRows;
+    }
+
+    #endregion
+    
+    public void InitBoard()
+    {
+        for (int i = 0; i < numOfRows; i++)
+        {
+            for (int j = 0; j < numOfColumns; j++)
+            {
+                notCaptured.Add(new Vector2(i, j));
+                if (i == 0 || i == numOfRows - 1 || j == 0 || j == numOfColumns - 1)
+                {
+                    CaptureSquare(i, j);
+                }
+            }
+        }
+        
+    }
+
+    public static void CaptureSquare(int row, int column)
+    {
+        grid[row, column] = Status.Captured;
+        notCaptured.Remove(new Vector2(row, column));
+        captured.Add(new Vector2(row, column));
+    }
+    
+
+    public Board(string spriteName) : base(spriteName)
+    {
+    }
+
+    public override void Draw(SpriteBatch spriteBatch)
+    {
+        
+        foreach (var square in captured)
+        {
+            spriteBatch.Draw(
+                texture, 
+                new Rectangle((int)(square.X * singleSquareWidth), (int)(square.Y * singleSquareHeight), (int)singleSquareWidth, (int)singleSquareHeight),
+                capturedBackground[(int)square.Y, (int)square.X],
+                color,
+                MathHelper.ToRadians(tm.rotation),
+                Vector2.Zero,
+                effects,
+                0
+            );
+        }
+        
+
+        /*
+        spriteBatch.Draw(
+            texture,
+            tm.position,
+            sourceRect,
+            color,
+            MathHelper.ToRadians(tm.rotation),
+            Vector2.Zero,
+            tm.scale,
+            effects,
+            0
+        );
+        */
+
+    }
+}
