@@ -38,18 +38,6 @@
 /processorParam:TextureFormat=Compressed
 /build:Fonts/Oswald.spritefont
 
-#begin Sprites/DVDIE.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Sprites/DVDIE.png
-
 #begin Sprites/PH_Background.png
 /importer:TextureImporter
 /processor:TextureProcessor
