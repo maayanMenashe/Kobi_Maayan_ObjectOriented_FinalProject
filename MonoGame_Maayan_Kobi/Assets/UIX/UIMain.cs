@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonoGame_Maayan_Kobi.Assets.UIX
+namespace MonoGame_Maayan_Kobi
 {
     public class UIMain: IDrawable
     {
