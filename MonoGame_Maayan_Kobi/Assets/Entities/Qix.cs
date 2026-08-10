@@ -19,7 +19,7 @@ namespace MonoGame_Maayan_Kobi
         
         
 
-        public Qix() : base("temp-player")
+        public Qix() : base("DVDie")
         {
             spawnPoint = Game1._screenCenter;
             tm.position = spawnPoint;

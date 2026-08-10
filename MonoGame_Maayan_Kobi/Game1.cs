@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using MonoGame_Maayan_Kobi.Assets.UIX;
 
 namespace MonoGame_Maayan_Kobi;
 
@@ -16,13 +17,12 @@ public class Game1 : Game
     //
     private Player player = null;
     private Qix enemy = null;
-    //private Board board = null;
+    private Board board = null;
     private GameManager gameManager = null;
     Texture2D texture;
     //
     private SpriteFont _fontOswald;
-    //
-    LivesText lives = new LivesText();
+    UIMain ui = new UIMain();
     //
     public const int ScreenWidth = 1920;
     public const int ScreenHeight = 1080;
@@ -67,33 +67,29 @@ public class Game1 : Game
 
     protected override void LoadContent()
     {
+        _fontOswald = Content.Load<SpriteFont>("Fonts/Oswald");
+        ui.wantedFont = _fontOswald;
         #region AudioManager init
         AudioManager.AddSong("theme", "Audio/OST/musinova_OSTMain");
         AudioManager.AddSoundEffect("Acquired", "Audio/SFX/Acquired");
         AudioManager.AddSoundEffect("Boom", "Audio/SFX/atari_boom4");
         #endregion
 
-
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
         #region SpriteManager init
         SpriteManager.AddSprite("Pixel", "Sprites/pixel");
-        SpriteManager.AddSprite("temp-background", "Sprites/PH_Background");
-        SpriteManager.AddSprite("temp-border", "Sprites/PH_Border");
         SpriteManager.AddSprite("temp-player", "Sprites/PH_Player");
+        SpriteManager.AddSprite("DVDie", "Sprites/DVDIE");
         SpriteManager.AddSprite("captured-area", "Sprites/screen_qix_screen_paint");
-
         #endregion
         texture = Content.Load<Texture2D>("Sprites/screen_qix_screen");
-        lives.font = Content.Load<SpriteFont>("Fonts/Oswald");
-        
         Start();
     }
 
-    void Start()
+    void Start() //Yakir's Save
     {
-        gameManager = SceneManager.Create<GameManager>();
-        //board = SceneManager.Create<Board>();
+        board = SceneManager.Create<Board>();
         AudioManager.PlaySong("theme");
         
         enemy = SceneManager.Create<Qix>();
@@ -102,9 +98,9 @@ public class Game1 : Game
         player = SceneManager.Create<Player>();
         //player.PlayAnimation();
         
+        gameManager = SceneManager.Create<GameManager>();
 
-        
-
+        ui.Start();
         
         SceneManager.Instance.Start();
 
@@ -122,9 +118,8 @@ public class Game1 : Game
     protected override void Update(GameTime gameTime)
     {
         if (ShouldExitApplication()) Exit();
-        
+        ui.Update(3);
         SceneManager.Instance.Update(gameTime);
-        
         base.Update(gameTime);
     }
 
@@ -133,10 +128,9 @@ public class Game1 : Game
         GraphicsDevice.Clear(Color.DarkRed);
 
         _spriteBatch.Begin();
-        _spriteBatch.Draw(texture, new Vector2(0,0), Color.White);
+        _spriteBatch.Draw(texture, new Vector2(0,0), Color.White); //Background
         SceneManager.Instance.Draw(_spriteBatch);
-        lives.Draw(_spriteBatch);
-
+        ui.Draw(_spriteBatch);
         _spriteBatch.End();
 
         base.Draw(gameTime);
