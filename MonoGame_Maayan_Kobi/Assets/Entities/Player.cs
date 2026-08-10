@@ -44,7 +44,10 @@ public class Player : Entity
         tm.scale = new Vector2(0.3f, 0.3f);
         
         prevPosition =  tm.position;
-   }
+
+        destRect.Width /= 3;
+        destRect.Height /= 3;
+    }
 
     public override void Update(GameTime gameTime)
     {
@@ -98,8 +101,8 @@ public class Player : Entity
 
     public void KillPlayer()
     {
-        tm.position = spawnPoint;
         playerDied?.Invoke();
+        tm.position = spawnPoint;
     }
 
     // public void OnCollision(Collider selfCollder, Collider otherCollder)

@@ -94,6 +94,11 @@ public class Board : Sprite
             }
         }
     }
+
+    private void OnPlayerDeath()
+    {
+        
+    }
     
 
     public Board(string spriteName) : base(spriteName)

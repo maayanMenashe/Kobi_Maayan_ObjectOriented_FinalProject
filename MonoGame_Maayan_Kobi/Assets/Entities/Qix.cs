@@ -21,6 +21,9 @@ namespace MonoGame_Maayan_Kobi
         public Qix() : base("temp-player")
         {
             speedMovement = 300;
+            
+            destRect.Width /= 3;
+            destRect.Height /= 3;
         }
 
         public override void Update(GameTime gameTime)
@@ -43,8 +46,7 @@ namespace MonoGame_Maayan_Kobi
 
         private void ChangeDirection()
         {
-            tm.position += new Vector2(1f,1f) * velocity * (float)deltaTime * speedMovement;
-            Vector2 nextStep =  tm.position + new Vector2(1f,1f) * velocity * (float)deltaTime * speedMovement;
+            Vector2 nextStep =  tm.position + new Vector2(1f,1f) * velocity * deltaTime * speedMovement;
             Vector2 nextVerticalPos = new Vector2(nextStep.X, tm.position.Y);
             Vector2 nextHorizontalPos = new Vector2(tm.position.X, nextStep.Y);
             if (Utils.IsOutOfBounds(nextVerticalPos, this) || Utils.WhatSquareAmI(nextVerticalPos, out int a, out int b) == Board.Status.Captured)
