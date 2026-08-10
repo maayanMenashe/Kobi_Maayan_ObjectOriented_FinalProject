@@ -121,7 +121,6 @@ public class Game1 : Game
         if (ShouldExitApplication()) Exit();
         
         SceneManager.Instance.Update(gameTime);
-        
         base.Update(gameTime);
     }
 

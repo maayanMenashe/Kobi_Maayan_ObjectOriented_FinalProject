@@ -17,6 +17,7 @@ namespace MonoGame_Maayan_Kobi.Assets.UIX
         {
             lives.font = wantedFont;
             lives.text = "lmao";
+            lives.tm.position = new Vector2(100, 50);
         }
 
         public void Update(GameTime gameTime)
