@@ -12,10 +12,6 @@ public class Text : IUpdatable, IDrawable
     public SpriteEffects effects = SpriteEffects.None;
     public string text = string.Empty;
     
-    public Text(string fontName)
-    {
-        this.font = ResourcesManager<SpriteFont>.GetResource(fontName);
-    }
     
     public virtual void Start()
     {

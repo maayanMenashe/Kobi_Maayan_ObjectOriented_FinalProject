@@ -17,7 +17,6 @@ public class Game1 : Game
     private Player player = null;
     private Qix enemy = null;
     private Board board = null;
-    Menu menu = null;
     //
     private SpriteFont _fontOswald;
     //
@@ -25,8 +24,6 @@ public class Game1 : Game
     //
     public const int ScreenWidth = 1920;
     public const int ScreenHeight = 1080;
-    //
-    public bool presentMenu = true;
 
     #region ResourcesManager   
     private ResourcesManager<Texture2D> textureManager;
@@ -81,9 +78,9 @@ public class Game1 : Game
         SpriteManager.AddSprite("temp-border", "Sprites/PH_Border");
         SpriteManager.AddSprite("temp-player", "Sprites/PH_Player");
         SpriteManager.AddSprite("captured-area", "Sprites/Result_TestCard");
-        SpriteManager.AddSprite("Button", "Sprites/button");
-        ResourcesManager<SpriteFont>.LoadResource("Oswald", "Fonts/Oswald");
         #endregion
+
+        mousePositionText.font = Content.Load<SpriteFont>("Fonts/Oswald");
         
         Start();
     }
@@ -113,18 +110,11 @@ public class Game1 : Game
         return GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                Keyboard.GetState().IsKeyDown(Keys.Escape);
     }
-    protected void MenuToggle() //Menu toggle action
-    {
-        presentMenu = !presentMenu;
-        menu.interactable = !menu.interactable; //Buttons are disabled
-    }
 
     protected override void Update(GameTime gameTime)
     {
         if (ShouldExitApplication()) Exit();
-        if (Keyboard.GetState().IsKeyDown(Keys.Enter) && !presentMenu) //Open menu
-            MenuToggle();
-
+        
         SceneManager.Instance.Update(gameTime);
         
         base.Update(gameTime);

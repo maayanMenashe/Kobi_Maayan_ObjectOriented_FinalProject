@@ -14,11 +14,11 @@ namespace MonoGame_Maayan_Kobi
     {
         public delegate void Clicked();
         //
-        public Text content;
+        public Text content = new Text();
         bool isPressed;
-        public Button() : base("Button")
+
+        public Button(string spriteName) : base(spriteName)
         {
-            content = new Text("Oswald");
         }
 
         public event Clicked ClickAction;
