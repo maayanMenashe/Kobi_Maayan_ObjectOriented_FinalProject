@@ -1,5 +1,6 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +15,16 @@ namespace MonoGame_Maayan_Kobi
         public SpriteFont wantedFont;
         protected Text text = new Text();
 
-        public void Start()
+        public virtual void Start()
         {
         }
 
         public void Update(GameTime gameTime)
         {
+            if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+            {
+                //insert destroy
+            }
         }
         public void Draw(SpriteBatch spriteBatch)
         {
