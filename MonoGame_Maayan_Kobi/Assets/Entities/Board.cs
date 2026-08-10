@@ -30,6 +30,8 @@ public class Board : Sprite
     public static float singleSquareWidth;
     public static float singleSquareHeight;
     private Spritesheet capturedBackground = new Spritesheet();
+
+    private static int numOfWalls;
     
     // Public
     
@@ -38,6 +40,7 @@ public class Board : Sprite
     public static Status[,] grid;
     public static HashSet<Vector2> notCaptured = new HashSet<Vector2>();
     public static HashSet<Vector2> captured = new HashSet<Vector2>();
+    public static HashSet<Vector2> touched = new HashSet<Vector2>();
 
     
     #endregion
@@ -72,7 +75,8 @@ public class Board : Sprite
                 }
             }
         }
-        
+
+        numOfWalls = captured.Count;
     }
 
 
@@ -121,7 +125,9 @@ public class Board : Sprite
     
     public static bool IsGoalPercentageReached(int goal, out float percentageCleared)
     {
-        percentageCleared = ((float)captured.Count / grid.Length) * 100;
+        float actualGridLength = grid.Length - numOfWalls;
+        float actualCapturedCount = captured.Count - numOfWalls;
+        percentageCleared = (actualCapturedCount / actualGridLength) * 100;
         if (percentageCleared >= goal)
         {
             return true;
