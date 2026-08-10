@@ -38,6 +38,7 @@ public class Game1 : Game
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
+        _graphics.IsFullScreen = true;
 
         textureManager = new(Content);
         songManager = new(Content);

@@ -46,4 +46,13 @@ public class GameManager : IUpdatable
             // game over
         }
     }
+
+    // private static void OnPlayerReachedSafety()
+    // {
+    //     if (Board.IsGoalPercentageReached(goal))
+    //     {
+    //         clear
+    //     }
+    //     
+    // }
 }

@@ -109,6 +109,17 @@ public class Board : Sprite
         }
     }
     
+    public static bool IsGoalPercentageReached(int goal)
+    {
+        int percentageCleared = (captured.Count / grid.Length) * 100;
+        if (percentageCleared >= goal)
+        {
+            return true;
+        }
+
+        return false;
+    }
+    
 
     public Board(string spriteName) : base(spriteName)
     {
