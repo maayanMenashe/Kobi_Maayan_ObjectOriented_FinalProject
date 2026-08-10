@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using MonoGame_Maayan_Kobi.Assets.UIX;
 
 namespace MonoGame_Maayan_Kobi;
 
@@ -27,6 +28,7 @@ public class GameManager : IUpdatable
     {
         currentPlayerLives = playerBaseLives;
         Player.playerReachedSafety += OnPlayerReachedSafety;
+        OnPlayerReachedSafety();
     }
 
     public void Update(GameTime gameTime)
@@ -45,12 +47,12 @@ public class GameManager : IUpdatable
 
     public static void PlayPlayerDeathSequence()
     {
-        //here
         AudioManager.PlaySoundEffect("Boom");
         playerDied?.Invoke();
         player.tm.position = player.spawnPoint;
         
         currentPlayerLives--;
+        UIMain.RemainingLives(currentPlayerLives);
         if (currentPlayerLives == 0)
         {
             // game over
@@ -64,7 +66,7 @@ public class GameManager : IUpdatable
         {
             LevelManager.NextLevel();
         }
-        //here
+        UIMain.ClaimedPercentage((int)currentPrecent, requiredPrecent);
     }
 
     public void OnNextLevel()
