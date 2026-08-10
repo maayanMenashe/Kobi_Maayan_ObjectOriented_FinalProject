@@ -65,9 +65,8 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         #region AudioManager init
-        AudioManager.AddSong("theme", "Audio/Music/theme");
-        AudioManager.AddSoundEffect("collect", "Audio/SFX/collect");
-        AudioManager.AddSoundEffect("bounce", "Audio/SFX/bounce");
+        //AudioManager.AddSong("theme", "Audio/Music/theme");
+        //AudioManager.AddSoundEffect("bounce", "Audio/SFX/bounce");
         #endregion
 
 
