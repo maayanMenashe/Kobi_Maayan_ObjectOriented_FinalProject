@@ -14,13 +14,14 @@ public class Sprite : IUpdatable, IDrawable
 
     protected Rectangle? sourceRect = null;
     public Rectangle destRect;
-    
-    private Vector2 origin = Vector2.Zero;
+
+    private Vector2 origin;
 
 
     public Sprite(string spriteName)
     {
         ChangeSprite(spriteName);
+        origin = new Vector2(texture.Width * 0.5f, texture.Height * 0.5f);
     }
 
     public void ChangeSprite(string spriteName)

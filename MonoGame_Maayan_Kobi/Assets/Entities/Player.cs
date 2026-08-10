@@ -23,6 +23,7 @@ public class Player : Entity
     //
     public static Action playerReachedSafety;
     public static Action playerDied;
+    //
 
 
     public Player() : base("temp-player")
@@ -36,7 +37,7 @@ public class Player : Entity
     {
         base.Start();
         
-        tm.position = Vector2.Zero;
+        tm.position = new Vector2(texture.Width, texture.Height) / 4f;
         tm.scale = new Vector2(0.3f, 0.3f);
         
         prevPosition =  tm.position;
@@ -70,7 +71,7 @@ public class Player : Entity
 
         
 
-        if (Utils.IsOutOfBounds(tm.position, prevPosition, this))
+        if (Utils.IsOutOfBounds(tm.position, this))
         {
             tm.position =  prevPosition;
             isOutOfBounds = false;
