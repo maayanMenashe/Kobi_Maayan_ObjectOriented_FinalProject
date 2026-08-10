@@ -1,4 +1,5 @@
-﻿using System.Transactions;
+﻿using System;
+using System.Transactions;
 using Microsoft.Xna.Framework;
 
 namespace MonoGame_Maayan_Kobi;
@@ -7,7 +8,7 @@ public class Enemy : Entity
 {
     public Collider collider { get; }
     
-    public Enemy() : base("temp-player")
+    public Enemy(string spriteName) : base(spriteName)
     {
         collider = SceneManager.Create<Collider>();
         collider.Parent = this;
@@ -22,13 +23,6 @@ public class Enemy : Entity
         tm.position = Game1._screenCenter;
         tm.position.Y -= 300;
         tm.scale = new Vector2(0.3f, 0.3f);
-    }
-    public virtual void Update(GameTime gameTime)
-    {
-        Action(gameTime);
-    }
-    protected virtual void Action(GameTime gameTime) //The action function
-    {
     }
 
     private void OnPlayerReachedSafety()

@@ -94,7 +94,7 @@ public class Game1 : Game
         //enemy.PlayAnimation();
         
         player = SceneManager.Create<Player>();
-        player.PlayAnimation();
+        //player.PlayAnimation();
         
 
         
