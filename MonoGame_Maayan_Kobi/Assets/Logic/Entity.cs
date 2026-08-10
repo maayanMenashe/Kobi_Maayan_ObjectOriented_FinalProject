@@ -4,6 +4,6 @@ public class Entity : Animation
 {
     public Entity(string spriteName) : base(spriteName)
     {
-        GameManager.AddEntity(this);
+        GameManager.allEntities.Add(this);
     }
 }

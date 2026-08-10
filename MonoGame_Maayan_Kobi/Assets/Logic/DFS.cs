@@ -13,8 +13,6 @@ public static class DFS
         Stack<Vector2> toCheck = new Stack<Vector2>();
         AddNeighbours(pos, toCheck);
         
-        
-
         while (toCheck.Count > 0)
         {
             Vector2 neighbour = toCheck.Pop();
@@ -26,6 +24,7 @@ public static class DFS
                 AddNeighbours(neighbour, toCheck);
             }
         }
+        
     }
 
     private static void AddNeighbours(Vector2 pos, Stack<Vector2> neighbours)
@@ -42,8 +41,7 @@ public static class DFS
                     continue;
                 }
                 
-                Vector2 newNeighbour;
-                if (IsNeighbourInBorder( pos, i, j, out newNeighbour))
+                if (IsNeighbourInBorder( pos, i, j, out Vector2 newNeighbour))
                 {
                     neighbours.Push(newNeighbour);
                 }
