@@ -50,8 +50,8 @@ public class Player : Entity
     {
         deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
         //float deltaTime = (float)deltaTime;
-        
-        
+
+
         if (Keyboard.GetState().IsKeyDown(Keys.D) || Keyboard.GetState().IsKeyDown(Keys.Right))
         {
             effects = SpriteEffects.FlipHorizontally;
@@ -98,6 +98,7 @@ public class Player : Entity
     {
         tm.position = spawnPoint;
         playerDied?.Invoke();
+        AudioManager.PlaySoundEffect("Boom");
     }
 
     // public void OnCollision(Collider selfCollder, Collider otherCollder)
