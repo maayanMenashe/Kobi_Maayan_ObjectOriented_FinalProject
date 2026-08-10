@@ -18,7 +18,7 @@ namespace MonoGame_Maayan_Kobi
         private float deltaTime;
         
 
-        public Qix() : base("temp-player")
+        public Qix() : base("DVDie")
         {
             speedMovement = 300;
             

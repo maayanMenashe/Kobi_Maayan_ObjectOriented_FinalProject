@@ -82,6 +82,7 @@ public class Game1 : Game
         SpriteManager.AddSprite("temp-background", "Sprites/PH_Background");
         SpriteManager.AddSprite("temp-border", "Sprites/PH_Border");
         SpriteManager.AddSprite("temp-player", "Sprites/PH_Player");
+        SpriteManager.AddSprite("DVDie", "Sprites/DVDIE");
         SpriteManager.AddSprite("captured-area", "Sprites/screen_qix_screen_paint");
         #endregion
         texture = Content.Load<Texture2D>("Sprites/screen_qix_screen");
