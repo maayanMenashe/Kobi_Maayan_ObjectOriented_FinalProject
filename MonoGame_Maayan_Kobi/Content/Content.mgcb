@@ -13,6 +13,12 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Audio/OST/musinova_OSTMain.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Audio/OST/musinova_OSTMain.mp3
+
 #begin Audio/SFX/atari_boom4.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
