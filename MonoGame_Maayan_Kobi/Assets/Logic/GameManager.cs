@@ -59,10 +59,12 @@ public class GameManager : IUpdatable
 
     private static void OnPlayerReachedSafety()
     {
-        if (Board.IsGoalPercentageReached(LevelManager.currentLevel.goalPercent))
+        int requiredPrecent = LevelManager.currentLevel.goalPercent;
+        if (Board.IsGoalPercentageReached(requiredPrecent, out float currentPrecent))
         {
             LevelManager.NextLevel();
         }
+        //here
     }
 
     public void OnNextLevel()

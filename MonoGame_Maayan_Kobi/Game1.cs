@@ -89,7 +89,8 @@ public class Game1 : Game
 
     void Start() //Yakir's Save
     {
-        board = SceneManager.Create<Board>();
+        gameManager = SceneManager.Create<GameManager>();
+        //board = SceneManager.Create<Board>();
         AudioManager.PlaySong("theme");
         
         enemy = SceneManager.Create<Qix>();
@@ -98,7 +99,6 @@ public class Game1 : Game
         player = SceneManager.Create<Player>();
         //player.PlayAnimation();
         
-        gameManager = SceneManager.Create<GameManager>();
 
         ui.Start();
         
