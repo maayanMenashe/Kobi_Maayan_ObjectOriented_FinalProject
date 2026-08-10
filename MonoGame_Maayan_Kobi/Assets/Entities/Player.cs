@@ -17,7 +17,6 @@ public class Player : Animation
     //
     private int currentSquareX;
     private int currentSquareY;
-    private Vector2 currentSquarePos;
     private Board.Status currentSquareStatus;
     private Board.Status prevSquareStatus = Board.Status.Captured;
     //
@@ -76,22 +75,13 @@ public class Player : Animation
             isOutOfBounds = false;
         }
         prevPosition =  tm.position;
-
-        currentSquarePos = Utils.CheckCurrentSquare(tm.position);
-        currentSquareX = (int)currentSquarePos.X;
-        currentSquareY = (int)currentSquarePos.Y;
-        currentSquareStatus = Board.grid[currentSquareX, currentSquareY];
+        currentSquareStatus = Utils.WhatSquareAmI(tm);
 
         if (currentSquareStatus == Board.Status.Uncaptured)
-        {
-            Board.grid[currentSquareX, currentSquareY] = Board.Status.Touched;
-            // paint it black by the rolling stones
-        }
+            Board.grid[currentSquareX, currentSquareY] = Board.Status.Touched; // paint it black by the rolling stones
 
         if (currentSquareStatus == Board.Status.Captured && currentSquareStatus != prevSquareStatus)
-        {
             playerReachedSafety?.Invoke();
-        }
 
         prevSquareStatus = currentSquareStatus;
     }
