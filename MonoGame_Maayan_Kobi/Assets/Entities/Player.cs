@@ -100,6 +100,7 @@ public class Player : Entity
     {
         tm.position = spawnPoint;
         playerDied?.Invoke();
+        AudioManager.PlaySoundEffect("Boom");
     }
 
     // public void OnCollision(Collider selfCollder, Collider otherCollder)
