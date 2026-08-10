@@ -10,6 +10,7 @@ public class Animation : Sprite
     private int y = 0;
     bool isLooping = true;
     bool isAnimating = false;
+    private double animDeltaTime;
     
     public Animation(string spriteName) : base(spriteName)
     {
@@ -54,8 +55,8 @@ public class Animation : Sprite
 
     bool CanMoveFrame(GameTime gameTime)
     {
-        double deltaTime = gameTime.ElapsedGameTime.TotalSeconds;
-        totalTime += deltaTime;
+        animDeltaTime = gameTime.ElapsedGameTime.TotalSeconds;
+        totalTime += animDeltaTime;
         
         if (totalTime >= 1.0f / samples)
             return true;

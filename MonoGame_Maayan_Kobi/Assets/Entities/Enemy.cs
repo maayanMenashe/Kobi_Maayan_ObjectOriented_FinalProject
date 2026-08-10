@@ -6,13 +6,14 @@ namespace MonoGame_Maayan_Kobi;
 
 public class Enemy : Entity
 {
-    public Collider collider { get; }
+    //public Collider collider { get; }
     
     public Enemy(string spriteName) : base(spriteName)
     {
-        collider = SceneManager.Create<Collider>();
-        collider.Parent = this;
-        collider.IsTrigger = true;
+        GameManager.allEnemies.Add(this);
+        // collider = SceneManager.Create<Collider>();
+        // collider.Parent = this;
+        // collider.IsTrigger = true;
         Player.playerReachedSafety += OnPlayerReachedSafety;
     }
     

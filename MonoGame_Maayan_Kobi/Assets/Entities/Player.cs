@@ -7,9 +7,8 @@ namespace MonoGame_Maayan_Kobi;
 
 public class Player : Entity
 {
-    float speedMovement = 300;
     int lives;
-    public Collider collider { get; }
+    //public Collider collider { get; }
 
     bool isOutOfBounds = false;
     Vector2 prevPosition = Vector2.Zero;
@@ -24,20 +23,24 @@ public class Player : Entity
     public static Action playerReachedSafety;
     public static Action playerDied;
     //
+    private Vector2 spawnPoint;
+    private float deltaTime;
 
 
     public Player() : base("temp-player")
     {
-        collider = SceneManager.Create<Collider>();
-        collider.Parent = this;
+        GameManager.player = this;
+        speedMovement = 300;
+        //collider = SceneManager.Create<Collider>();
+        //collider.Parent = this;
         playerReachedSafety += Board.OnPlayerReachedSafety;
     }
 
     public override void Start()
     {
         base.Start();
-        
-        tm.position = new Vector2(texture.Width, texture.Height) / 4f;
+        spawnPoint = new Vector2(texture.Width, texture.Height) / 4f;
+        tm.position = spawnPoint;
         tm.scale = new Vector2(0.3f, 0.3f);
         
         prevPosition =  tm.position;
@@ -45,7 +48,8 @@ public class Player : Entity
 
     public override void Update(GameTime gameTime)
     {
-        float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+        deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+        //float deltaTime = (float)deltaTime;
         
         
         if (Keyboard.GetState().IsKeyDown(Keys.D) || Keyboard.GetState().IsKeyDown(Keys.Right))
@@ -90,20 +94,26 @@ public class Player : Entity
         prevSquareStatus = currentSquareStatus;
     }
 
-    public void OnCollision(Collider selfCollder, Collider otherCollder)
+    public void KillPlayer()
     {
-        isOutOfBounds = true;
-        Console.WriteLine("Self " + selfCollder.Parent + " is colliding with " + otherCollder.Parent);
+        tm.position = spawnPoint;
+        playerDied?.Invoke();
     }
-    
-    public void OnTrigger(Collider selfCollder, Collider otherCollder)
-    {
-        
-        AudioManager.PlaySoundEffect("collect");
-        
-        Console.WriteLine("Self " + selfCollder.Parent + " is trigger with " + otherCollder.Parent);
-        
-        SceneManager.Remove(otherCollder);
-        SceneManager.Remove(otherCollder.Parent);
-    }
+
+    // public void OnCollision(Collider selfCollder, Collider otherCollder)
+    // {
+    //     isOutOfBounds = true;
+    //     Console.WriteLine("Self " + selfCollder.Parent + " is colliding with " + otherCollder.Parent);
+    // }
+    //
+    // public void OnTrigger(Collider selfCollder, Collider otherCollder)
+    // {
+    //     
+    //     AudioManager.PlaySoundEffect("collect");
+    //     
+    //     Console.WriteLine("Self " + selfCollder.Parent + " is trigger with " + otherCollder.Parent);
+    //     
+    //     SceneManager.Remove(otherCollder);
+    //     SceneManager.Remove(otherCollder.Parent);
+    // }
 }

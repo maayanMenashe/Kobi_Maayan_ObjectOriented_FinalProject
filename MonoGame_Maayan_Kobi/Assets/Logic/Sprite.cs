@@ -16,6 +16,9 @@ public class Sprite : IUpdatable, IDrawable
     public Rectangle destRect;
 
     private Vector2 origin;
+    
+    protected double deltaTime;
+
 
 
     public Sprite(string spriteName)
@@ -53,6 +56,7 @@ public class Sprite : IUpdatable, IDrawable
     {
         // origin calculation must happened AFTER the source being update
         // which is occur in the Animation.update()
+        deltaTime = gameTime.ElapsedGameTime.TotalSeconds;
 
         UpdateOrigin();
         UpdateDestRect();

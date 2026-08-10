@@ -17,6 +17,7 @@ public class Game1 : Game
     private Player player = null;
     private Qix enemy = null;
     private Board board = null;
+    private GameManager gameManager = null;
     //
     private SpriteFont _fontOswald;
     //
@@ -95,6 +96,9 @@ public class Game1 : Game
         
         player = SceneManager.Create<Player>();
         //player.PlayAnimation();
+        
+        //gameManager = SceneManager.Create<GameManager>();
+
         
 
         
