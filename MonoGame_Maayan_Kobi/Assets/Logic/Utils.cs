@@ -17,7 +17,6 @@ public static class Utils
         {
             return true;
         }
-
         return false;
 
     }

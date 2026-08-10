@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 
 namespace MonoGame_Maayan_Kobi;
 
-public class Enemy : Animation
+public class Enemy : Entity
 {
     public Collider collider { get; }
     

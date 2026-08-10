@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MonoGame_Maayan_Kobi;
 
-public class Player : Animation
+public class Player : Entity
 {
     float speedMovement = 300;
     int lives;
