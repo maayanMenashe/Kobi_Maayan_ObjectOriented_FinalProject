@@ -92,7 +92,7 @@ public class Game1 : Game
 
     void Start()
     {
-        board = SceneManager.Create<Board>();
+        //board = SceneManager.Create<Board>();
         AudioManager.PlaySong("theme");
         
         enemy = SceneManager.Create<Qix>();
