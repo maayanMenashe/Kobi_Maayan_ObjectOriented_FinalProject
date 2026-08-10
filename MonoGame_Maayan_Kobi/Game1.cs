@@ -79,8 +79,6 @@ public class Game1 : Game
 
         #region SpriteManager init
         SpriteManager.AddSprite("Pixel", "Sprites/pixel");
-        SpriteManager.AddSprite("temp-background", "Sprites/PH_Background");
-        SpriteManager.AddSprite("temp-border", "Sprites/PH_Border");
         SpriteManager.AddSprite("temp-player", "Sprites/PH_Player");
         SpriteManager.AddSprite("DVDie", "Sprites/DVDIE");
         SpriteManager.AddSprite("captured-area", "Sprites/screen_qix_screen_paint");
