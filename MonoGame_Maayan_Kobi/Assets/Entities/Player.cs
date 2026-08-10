@@ -77,7 +77,7 @@ public class Player : Animation
         }
         prevPosition =  tm.position;
 
-        currentSquarePos = Utils.CheckCurrentSquare(this);
+        currentSquarePos = Utils.CheckCurrentSquare(tm.position);
         currentSquareX = (int)currentSquarePos.X;
         currentSquareY = (int)currentSquarePos.Y;
         currentSquareStatus = Board.grid[currentSquareX, currentSquareY];

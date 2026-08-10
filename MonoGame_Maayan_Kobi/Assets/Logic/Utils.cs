@@ -4,10 +4,10 @@ namespace MonoGame_Maayan_Kobi;
 
 public static class Utils
 {
-    public static Vector2 CheckCurrentSquare(Sprite sprite)
+    public static Vector2 CheckCurrentSquare(Vector2 pos)
     {
-        float X = sprite.tm.position.X / Board.singleSquareWidth;
-        float Y = sprite.tm.position.Y / Board.singleSquareHeight;
+        float X = pos.X / Board.singleSquareWidth;
+        float Y = pos.Y / Board.singleSquareHeight;
         return new Vector2(X, Y);
     }
 
