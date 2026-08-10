@@ -118,7 +118,6 @@ public class Game1 : Game
     protected override void Update(GameTime gameTime)
     {
         if (ShouldExitApplication()) Exit();
-        ui.Update(3);
         SceneManager.Instance.Update(gameTime);
         base.Update(gameTime);
     }
