@@ -53,8 +53,6 @@ public class Board : Sprite
         capturedBackground.texture = texture;
         singleSquareWidth = Game1.ScreenWidth / numOfColumns;
         singleSquareHeight = Game1.ScreenHeight / numOfRows;
-
-        Player.playerReachedSafety += OnPlayerReachedSafety;
     }
 
     #endregion
@@ -82,13 +80,17 @@ public class Board : Sprite
         captured.Add(new Vector2(row, column));
     }
 
-    private void OnPlayerReachedSafety()
+    public static void OnPlayerReachedSafety()
     {
         foreach (var vector in notCaptured)
         {
             if (grid[(int)vector.X, (int)vector.Y] != Status.Enemy)
             {
                 CaptureSquare((int)vector.X, (int)vector.Y);
+            }
+            else
+            {
+                grid[(int)vector.X, (int)vector.Y] = Status.Uncaptured;
             }
         }
     }
@@ -114,21 +116,5 @@ public class Board : Sprite
                 0
             );
         }
-        
-
-        /*
-        spriteBatch.Draw(
-            texture,
-            tm.position,
-            sourceRect,
-            color,
-            MathHelper.ToRadians(tm.rotation),
-            Vector2.Zero,
-            tm.scale,
-            effects,
-            0
-        );
-        */
-
     }
 }

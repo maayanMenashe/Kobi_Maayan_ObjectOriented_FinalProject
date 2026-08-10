@@ -19,7 +19,7 @@ public class Player : Animation
     private int currentSquareY;
     private Vector2 currentSquarePos;
     private Board.Status currentSquareStatus;
-    private Board.Status prevSquareStatus;
+    private Board.Status prevSquareStatus = Board.Status.Captured;
     //
     public static Action playerReachedSafety;
 
@@ -28,13 +28,14 @@ public class Player : Animation
     {
         collider = SceneManager.Create<Collider>();
         collider.Parent = this;
+        playerReachedSafety += Board.OnPlayerReachedSafety;
     }
 
     public override void Start()
     {
         base.Start();
         
-        tm.position = Game1._screenCenter;
+        tm.position = Vector2.Zero;
         tm.scale = new Vector2(0.3f, 0.3f);
         
         prevPosition =  tm.position;

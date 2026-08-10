@@ -88,6 +88,7 @@ public class Game1 : Game
 
     void Start()
     {
+        board = SceneManager.Create<Board>();
         //AudioManager.PlaySong("theme");
         
         enemy = SceneManager.Create<Qix>();
@@ -96,7 +97,6 @@ public class Game1 : Game
         player = SceneManager.Create<Player>();
         player.PlayAnimation();
         
-        board = SceneManager.Create<Board>();
 
         
         SceneManager.Instance.Start();
