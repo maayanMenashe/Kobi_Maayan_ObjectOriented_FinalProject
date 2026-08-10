@@ -14,13 +14,17 @@ public class Sprite : IUpdatable, IDrawable
 
     protected Rectangle? sourceRect = null;
     public Rectangle destRect;
+
+    private Vector2 origin;
     
-    private Vector2 origin = Vector2.Zero;
+    protected double deltaTime;
+
 
 
     public Sprite(string spriteName)
     {
         ChangeSprite(spriteName);
+        origin = new Vector2(texture.Width * 0.5f, texture.Height * 0.5f);
     }
 
     public void ChangeSprite(string spriteName)
@@ -52,6 +56,7 @@ public class Sprite : IUpdatable, IDrawable
     {
         // origin calculation must happened AFTER the source being update
         // which is occur in the Animation.update()
+        deltaTime = gameTime.ElapsedGameTime.TotalSeconds;
 
         UpdateOrigin();
         UpdateDestRect();

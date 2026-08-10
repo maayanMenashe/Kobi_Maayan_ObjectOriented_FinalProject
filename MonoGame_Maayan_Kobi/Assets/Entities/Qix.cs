@@ -11,43 +11,62 @@ namespace MonoGame_Maayan_Kobi
 {
     public class Qix: Enemy
     {
-        float speedMovement = 300;
-        int vertiDelta = 1, HorizDelta = 1;
-        Vector2 velocity = new Vector2(1,1);
         private Vector2 prevPos = Game1._screenCenter;
+        private Vector2 nextPos;
+        private Board.Status currentSquareStatus;
+        private Vector2 velocity = new Vector2(1,1);
+        private float deltaTime;
         
-        protected override void Action(GameTime gameTime)
+
+        public Qix() : base("temp-player")
         {
-            float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            Board.Status currentSquareStatus = Utils.WhatSquareAmI(tm.position, out int curX, out int curY);
-            if (Utils.IsOutOfBounds(tm.position, prevPos, this) || currentSquareStatus != Board.Status.Captured)
+            speedMovement = 300;
+            
+            destRect.Width /= 3;
+            destRect.Height /= 3;
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+            deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            tm.position += new Vector2(1f,1f) * velocity * deltaTime * speedMovement;
+            currentSquareStatus = Utils.WhatSquareAmI(tm.position, out int currentSquareX, out int currentSquareY);
+            if (Utils.IsOutOfBounds(tm.position, this) || currentSquareStatus == Board.Status.Captured)
+            {
                 tm.position = prevPos;
+                ChangeDirection();
+            }
             prevPos = tm.position;
-            /*
-            if (true) // vertical
+            destRect.X = (int)tm.position.X;
+            destRect.Y = (int)tm.position.Y;
+            
+            
+            if (currentSquareStatus == Board.Status.Touched)
+                GameManager.PlayPlayerDeathSequence();
+        }
+
+
+
+        private void ChangeDirection()
+        {
+            Vector2 nextStep =  tm.position + new Vector2(1f,1f) * velocity * deltaTime * speedMovement;
+            Vector2 nextVerticalPos = new Vector2(nextStep.X, tm.position.Y);
+            Vector2 nextHorizontalPos = new Vector2(tm.position.X, nextStep.Y);
+            if (Utils.IsOutOfBounds(nextVerticalPos, this) || Utils.WhatSquareAmI(nextVerticalPos, out int a, out int b) == Board.Status.Captured)
             {
-                vertiDelta = 1;
-                velocity.X = vertiDelta;
+                velocity *= new Vector2(-1, 1);
             }
-            if (true)
+            
+            if (Utils.IsOutOfBounds(nextHorizontalPos, this) || Utils.WhatSquareAmI(nextHorizontalPos, out int c, out int d) == Board.Status.Captured)
             {
-                vertiDelta = -1;
-                velocity.X = vertiDelta;
+                velocity *= new Vector2(1, -1);
             }
-            if (true)// horizontal
-            {
-                HorizDelta = 1;
-                velocity.Y = HorizDelta;
-            }
-            if (true)
-            {
-                HorizDelta = -1;
-                velocity.Y = HorizDelta;
-            }
-            */
-            tm.position += velocity; 
         }
     }
+    
+    
+
     
 
 }

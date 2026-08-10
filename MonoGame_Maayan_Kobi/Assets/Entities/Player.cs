@@ -7,9 +7,7 @@ namespace MonoGame_Maayan_Kobi;
 
 public class Player : Entity
 {
-    float speedMovement = 300;
-    int lives;
-    public Collider collider { get; }
+    //public Collider collider { get; }
 
     bool isOutOfBounds = false;
     Vector2 prevPosition = Vector2.Zero;
@@ -22,29 +20,36 @@ public class Player : Entity
     private Board.Status prevSquareStatus = Board.Status.Captured;
     //
     public static Action playerReachedSafety;
-    public static Action playerDied;
+    //
+    public Vector2 spawnPoint;
+    private float deltaTime;
 
 
     public Player() : base("temp-player")
     {
-        collider = SceneManager.Create<Collider>();
-        collider.Parent = this;
+        GameManager.player = this;
+        speedMovement = 300;
+        //collider = SceneManager.Create<Collider>();
+        //collider.Parent = this;
         playerReachedSafety += Board.OnPlayerReachedSafety;
     }
 
     public override void Start()
     {
         base.Start();
-        
-        tm.position = Vector2.Zero;
+        spawnPoint = new Vector2(texture.Width, texture.Height) / 4f;
+        tm.position = spawnPoint;
         tm.scale = new Vector2(0.3f, 0.3f);
         
         prevPosition =  tm.position;
-   }
+
+        destRect.Width /= 3;
+        destRect.Height /= 3;
+    }
 
     public override void Update(GameTime gameTime)
     {
-        float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+        deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
         
         
         if (Keyboard.GetState().IsKeyDown(Keys.D) || Keyboard.GetState().IsKeyDown(Keys.Right))
@@ -65,12 +70,15 @@ public class Player : Entity
         {
             tm.position += new Vector2(0, -speedMovement * deltaTime);
         }
+
+        destRect.X = (int)tm.position.X;
+        destRect.Y = (int)tm.position.Y;
         
-        //base.Update(gameTime);
+        base.Update(gameTime);
 
         
 
-        if (Utils.IsOutOfBounds(tm.position, prevPosition, this))
+        if (Utils.IsOutOfBounds(tm.position, this))
         {
             tm.position =  prevPosition;
             isOutOfBounds = false;
@@ -84,25 +92,28 @@ public class Player : Entity
             Board.grid[currentSquareX, currentSquareY] = Board.Status.Touched; // paint it black by the rolling stones
 
         if (currentSquareStatus == Board.Status.Captured && currentSquareStatus != prevSquareStatus)
+        {
+            AudioManager.PlaySoundEffect("Acquired");
             playerReachedSafety?.Invoke();
+        }
 
         prevSquareStatus = currentSquareStatus;
     }
 
-    public void OnCollision(Collider selfCollder, Collider otherCollder)
-    {
-        isOutOfBounds = true;
-        Console.WriteLine("Self " + selfCollder.Parent + " is colliding with " + otherCollder.Parent);
-    }
-    
-    public void OnTrigger(Collider selfCollder, Collider otherCollder)
-    {
-        
-        AudioManager.PlaySoundEffect("collect");
-        
-        Console.WriteLine("Self " + selfCollder.Parent + " is trigger with " + otherCollder.Parent);
-        
-        SceneManager.Remove(otherCollder);
-        SceneManager.Remove(otherCollder.Parent);
-    }
+    // public void OnCollision(Collider selfCollder, Collider otherCollder)
+    // {
+    //     isOutOfBounds = true;
+    //     Console.WriteLine("Self " + selfCollder.Parent + " is colliding with " + otherCollder.Parent);
+    // }
+    //
+    // public void OnTrigger(Collider selfCollder, Collider otherCollder)
+    // {
+    //     
+    //     AudioManager.PlaySoundEffect("collect");
+    //     
+    //     Console.WriteLine("Self " + selfCollder.Parent + " is trigger with " + otherCollder.Parent);
+    //     
+    //     SceneManager.Remove(otherCollder);
+    //     SceneManager.Remove(otherCollder.Parent);
+    // }
 }

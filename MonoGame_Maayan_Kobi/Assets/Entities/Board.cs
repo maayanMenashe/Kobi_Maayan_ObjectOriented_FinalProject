@@ -53,6 +53,7 @@ public class Board : Sprite
         capturedBackground.texture = texture;
         singleSquareWidth = Game1.ScreenWidth / numOfColumns;
         singleSquareHeight = Game1.ScreenHeight / numOfRows;
+        GameManager.playerDied += OnPlayerDeath;
     }
 
     #endregion
@@ -93,6 +94,30 @@ public class Board : Sprite
                 grid[(int)vector.X, (int)vector.Y] = Status.Uncaptured;
             }
         }
+    }
+
+    private void OnPlayerDeath()
+    {
+        foreach (var vector in notCaptured)
+        {
+            int x = (int)vector.X;
+            int y = (int)vector.Y;
+            if (grid[x,y] == Status.Touched)
+            {
+                grid[x, y] = Status.Uncaptured;
+            }
+        }
+    }
+    
+    public static bool IsGoalPercentageReached(int goal)
+    {
+        int percentageCleared = (captured.Count / grid.Length) * 100;
+        if (percentageCleared >= goal)
+        {
+            return true;
+        }
+
+        return false;
     }
     
 

@@ -8,7 +8,7 @@ public class SceneManager : IUpdatable, IDrawable
 {
     private static List<IUpdatable> _updatables = new();
     private static List<IDrawable> _drawables = new();
-    private static List<Collider> _colliders = new();
+    //private static List<Collider> _colliders = new();
 
     private static SceneManager instance = null;
 
@@ -25,10 +25,10 @@ public class SceneManager : IUpdatable, IDrawable
             _drawables.Add(drawable);
         }
         
-        if (obj is Collider collider)
-        {
-            _colliders.Add(collider);
-        }
+        // if (obj is Collider collider)
+        // {
+        //     _colliders.Add(collider);
+        // }
         
         return obj;
     }
@@ -43,10 +43,10 @@ public class SceneManager : IUpdatable, IDrawable
         {
             _drawables.Remove(drawable);
         }
-        if (obj is Collider collider)
-        {
-            _colliders.Remove(collider);
-        }
+        // if (obj is Collider collider)
+        // {
+        //     _colliders.Remove(collider);
+        // }
     }
 
     public static SceneManager Instance
@@ -71,24 +71,24 @@ public class SceneManager : IUpdatable, IDrawable
     {
         _updatables.ForEach(updatable => updatable.Update(gameTime));
         
-        HandleCollisions();
+        //HandleCollisions();
     }
 
-    public void HandleCollisions()
-    {
-        for (int i = 0; i < _colliders.Count; i++)
-        {
-            Collider currentCollider = _colliders[i];
-
-            for (int j = 0; j < _colliders.Count; j++)
-            {
-                Collider otherCollider = _colliders[j];
-                
-                if (i != j && currentCollider.IsInterset(otherCollider))
-                    currentCollider.Notify(otherCollider);
-            }
-        }
-    }
+    // public void HandleCollisions()
+    // {
+    //     for (int i = 0; i < _colliders.Count; i++)
+    //     {
+    //         Collider currentCollider = _colliders[i];
+    //
+    //         for (int j = 0; j < _colliders.Count; j++)
+    //         {
+    //             Collider otherCollider = _colliders[j];
+    //             
+    //             if (i != j && currentCollider.IsInterset(otherCollider))
+    //                 currentCollider.Notify(otherCollider);
+    //         }
+    //     }
+    // }
 
     public void Draw(SpriteBatch spriteBatch)
     {

@@ -21,9 +21,9 @@ public static class Utils
     }
     
 
-    public static bool IsOutOfBounds(Vector2 currentPos, Vector2 prevPos, Sprite thisSprite) //Checks if the current position is outside the play bounds
+    public static bool IsOutOfBounds(Vector2 currentPos, Sprite thisSprite) //Checks if the current position is outside the play bounds
     {
-        if (currentPos.X < 0 || currentPos.Y < 0 || currentPos.X > Game1.ScreenWidth - thisSprite.texture.Width/2f + 15|| currentPos.Y > Game1.ScreenHeight - thisSprite.texture.Height/2f - 10)
+        if (currentPos.X < 0 || currentPos.Y < 0 || currentPos.X > Game1.ScreenWidth - thisSprite.texture.Width/2f|| currentPos.Y > Game1.ScreenHeight - thisSprite.texture.Height/2f)
         {
             return true;
         }

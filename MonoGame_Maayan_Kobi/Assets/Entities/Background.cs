@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonoGame_Maayan_Kobi
+namespace MonoGame_Maayan_Kobi.Assets.Entities
 {
-    public class Terrain : Sprite
+    internal class Background
     {
-        public Terrain() : base("temp-background")
-        {
-        }
     }
 }
