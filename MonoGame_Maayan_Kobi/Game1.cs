@@ -21,7 +21,7 @@ public class Game1 : Game
     //
     private SpriteFont _fontOswald;
     //
-    MousePositionText mousePositionText = new MousePositionText();
+    LivesText lives = new LivesText();
     //
     public const int ScreenWidth = 1920;
     public const int ScreenHeight = 1080;
@@ -81,7 +81,7 @@ public class Game1 : Game
         SpriteManager.AddSprite("captured-area", "Sprites/Result_TestCard");
         #endregion
 
-        mousePositionText.font = Content.Load<SpriteFont>("Fonts/Oswald");
+        lives.font = Content.Load<SpriteFont>("Fonts/Oswald");
         
         Start();
     }
@@ -131,7 +131,8 @@ public class Game1 : Game
         _spriteBatch.Begin();
 
         SceneManager.Instance.Draw(_spriteBatch);
-        
+        lives.Draw(_spriteBatch);
+
         _spriteBatch.End();
 
         base.Draw(gameTime);
