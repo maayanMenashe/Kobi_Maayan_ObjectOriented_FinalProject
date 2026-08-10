@@ -22,8 +22,8 @@ public class Board : Sprite
     #region Variables
 
     // const
-    private const int numOfRows = 20;
-    private const int numOfColumns = 20;
+    public const int numOfRows = 20;
+    public const int numOfColumns = 20;
     private const string spriteName = "captured-area";
     
     // Private
@@ -53,6 +53,8 @@ public class Board : Sprite
         capturedBackground.texture = texture;
         singleSquareWidth = Game1.ScreenWidth / numOfColumns;
         singleSquareHeight = Game1.ScreenHeight / numOfRows;
+
+        Player.playerReachedSafety += OnPlayerReachedSafety;
     }
 
     #endregion
@@ -78,6 +80,17 @@ public class Board : Sprite
         grid[row, column] = Status.Captured;
         notCaptured.Remove(new Vector2(row, column));
         captured.Add(new Vector2(row, column));
+    }
+
+    private void OnPlayerReachedSafety()
+    {
+        foreach (var vector in notCaptured)
+        {
+            if (grid[(int)vector.X, (int)vector.Y] != Status.Enemy)
+            {
+                CaptureSquare((int)vector.X, (int)vector.Y);
+            }
+        }
     }
     
 

@@ -17,7 +17,11 @@ public class Player : Animation
     //
     private int currentSquareX;
     private int currentSquareY;
+    private Vector2 currentSquarePos;
     private Board.Status currentSquareStatus;
+    private Board.Status prevSquareStatus;
+    //
+    public static Action playerReachedSafety;
 
 
     public Player() : base("temp-player")
@@ -74,8 +78,9 @@ public class Player : Animation
         }
         prevPosition =  tm.position;
 
-        currentSquareX = (int)tm.position.X / (int)Board.singleSquareWidth;
-        currentSquareY = (int)tm.position.Y / (int)Board.singleSquareHeight;
+        currentSquarePos = Utils.CheckCurrentSquare(this);
+        currentSquareX = (int)currentSquarePos.X;
+        currentSquareY = (int)currentSquarePos.Y;
         currentSquareStatus = Board.grid[currentSquareX, currentSquareY];
 
         if (currentSquareStatus == Board.Status.Uncaptured)
@@ -84,19 +89,12 @@ public class Player : Animation
             // paint it black by the rolling stones
         }
 
-        if (currentSquareStatus == Board.Status.Captured)
+        if (currentSquareStatus == Board.Status.Captured && currentSquareStatus != prevSquareStatus)
         {
-            //do the DFS
-            foreach (var vector in Board.notCaptured)
-            {
-                if (Board.grid[(int)vector.X, (int)vector.Y] != Board.Status.Enemy)
-                {
-                    Board.CaptureSquare((int)vector.X, (int)vector.Y);
-                }
-            }
+            playerReachedSafety?.Invoke();
         }
 
-
+        prevSquareStatus = currentSquareStatus;
     }
 
     public void OnCollision(Collider selfCollder, Collider otherCollder)

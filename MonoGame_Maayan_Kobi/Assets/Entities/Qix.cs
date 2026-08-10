@@ -15,7 +15,7 @@ namespace MonoGame_Maayan_Kobi
         protected override void Action(GameTime gameTime)
         {
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            tm.position += new Vector2(0, speedMovement * deltaTime); 
+            //tm.position += new Vector2(0, speedMovement * deltaTime); 
             //insert collision logic here
         }
     }

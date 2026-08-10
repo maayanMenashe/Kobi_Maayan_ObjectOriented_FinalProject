@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Transactions;
+using Microsoft.Xna.Framework;
 
 namespace MonoGame_Maayan_Kobi;
 
@@ -11,6 +12,7 @@ public class Enemy : Animation
         collider = SceneManager.Create<Collider>();
         collider.Parent = this;
         collider.IsTrigger = true;
+        Player.playerReachedSafety += OnPlayerReachedSafety;
     }
     
     public override void Start()
@@ -27,5 +29,10 @@ public class Enemy : Animation
     }
     protected virtual void Action(GameTime gameTime) //The action function
     {
+    }
+
+    private void OnPlayerReachedSafety()
+    {
+        DFS.MarkAllEnemySquares(  Utils.CheckCurrentSquare(this));
     }
 }
