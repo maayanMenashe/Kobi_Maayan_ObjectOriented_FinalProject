@@ -33,6 +33,6 @@ public class Enemy : Animation
 
     private void OnPlayerReachedSafety()
     {
-        DFS.MarkAllEnemySquares(  Utils.CheckCurrentSquare(this));
+        DFS.MarkAllEnemySquares(Utils.CheckCurrentSquare(this));
     }
 }

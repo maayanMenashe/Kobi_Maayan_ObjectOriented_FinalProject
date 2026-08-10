@@ -13,23 +13,11 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin Audio/Music/theme.ogg
-/importer:OggImporter
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Audio/Music/theme.ogg
-
-#begin Audio/SFX/bounce.wav
+#begin Audio/SFX/atari_boom4.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Audio/SFX/bounce.wav
-
-#begin Audio/SFX/collect.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:Audio/SFX/collect.wav
+/build:Audio/SFX/atari_boom4.wav
 
 #begin Fonts/Oswald.spritefont
 /importer:FontDescriptionImporter
