@@ -5,6 +5,10 @@ namespace MonoGame_Maayan_Kobi;
 
 public class MousePositionText : Text
 {
+    public MousePositionText() : base("Oswald")
+    {
+    }
+
     public override void Start()
     {
 
