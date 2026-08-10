@@ -19,6 +19,12 @@
 /processorParam:Quality=Best
 /build:Audio/OST/musinova_OSTMain.mp3
 
+#begin Audio/SFX/Acquired.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/SFX/Acquired.wav
+
 #begin Audio/SFX/atari_boom4.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor

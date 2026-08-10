@@ -92,7 +92,10 @@ public class Player : Entity
             Board.grid[currentSquareX, currentSquareY] = Board.Status.Touched; // paint it black by the rolling stones
 
         if (currentSquareStatus == Board.Status.Captured && currentSquareStatus != prevSquareStatus)
+        {
+            AudioManager.PlaySoundEffect("Acquired");
             playerReachedSafety?.Invoke();
+        }
 
         prevSquareStatus = currentSquareStatus;
     }

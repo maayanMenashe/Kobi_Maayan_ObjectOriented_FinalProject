@@ -69,7 +69,7 @@ public class Game1 : Game
     {
         #region AudioManager init
         AudioManager.AddSong("theme", "Audio/OST/musinova_OSTMain");
-        //AudioManager.AddSoundEffect("bounce", "Audio/SFX/bounce");
+        AudioManager.AddSoundEffect("Acquired", "Audio/SFX/Acquired");
         AudioManager.AddSoundEffect("Boom", "Audio/SFX/atari_boom4");
         #endregion
 
