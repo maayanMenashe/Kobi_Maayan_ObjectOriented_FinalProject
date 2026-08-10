@@ -17,6 +17,7 @@ public class Player : Entity
     //
     private int currentSquareX;
     private int currentSquareY;
+    private Vector2 currentSquarePos;
     private Board.Status currentSquareStatus;
     private Board.Status prevSquareStatus = Board.Status.Captured;
     //
@@ -75,8 +76,10 @@ public class Player : Entity
             isOutOfBounds = false;
         }
         prevPosition =  tm.position;
-        currentSquareStatus = Utils.WhatSquareAmI(tm);
-
+        
+        
+        currentSquareStatus = Utils.WhatSquareAmI(tm.position, out currentSquareX, out currentSquareY);
+        
         if (currentSquareStatus == Board.Status.Uncaptured)
             Board.grid[currentSquareX, currentSquareY] = Board.Status.Touched; // paint it black by the rolling stones
 

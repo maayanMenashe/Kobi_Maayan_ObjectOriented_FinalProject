@@ -11,13 +11,15 @@ public static class Utils
         return new Vector2(X, Y);
     }
 
-    public static Board.Status WhatSquareAmI(Transform tm) //Checks the current status of the square on the grid
+    
+    public static Board.Status WhatSquareAmI(Vector2 pos ,out int xPos, out int yPos) //Checks the current status of the square on the grid
     {
-        Vector2 currentSquarePos = Utils.CheckCurrentSquare(tm.position);
-        int currentSquareX = (int)currentSquarePos.X;
-        int currentSquareY = (int)currentSquarePos.Y;
-        return Board.grid[currentSquareX, currentSquareY];
+        Vector2 currentSquarePos = CheckCurrentSquare(pos);
+        xPos = (int)currentSquarePos.X;
+        yPos = (int)currentSquarePos.Y;
+        return Board.grid[xPos, yPos];
     }
+    
 
     public static bool IsOutOfBounds(Vector2 currentPos, Vector2 prevPos, Sprite thisSprite) //Checks if the current position is outside the play bounds
     {
