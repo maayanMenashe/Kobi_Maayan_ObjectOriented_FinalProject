@@ -53,6 +53,7 @@ public class Board : Sprite
         capturedBackground.texture = texture;
         singleSquareWidth = Game1.ScreenWidth / numOfColumns;
         singleSquareHeight = Game1.ScreenHeight / numOfRows;
+        GameManager.playerDied += OnPlayerDeath;
     }
 
     #endregion
@@ -97,7 +98,15 @@ public class Board : Sprite
 
     private void OnPlayerDeath()
     {
-        
+        foreach (var vector in notCaptured)
+        {
+            int x = (int)vector.X;
+            int y = (int)vector.Y;
+            if (grid[x,y] == Status.Touched)
+            {
+                grid[x, y] = Status.Uncaptured;
+            }
+        }
     }
     
 

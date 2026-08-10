@@ -7,7 +7,6 @@ namespace MonoGame_Maayan_Kobi;
 
 public class Player : Entity
 {
-    int lives;
     //public Collider collider { get; }
 
     bool isOutOfBounds = false;
@@ -21,9 +20,8 @@ public class Player : Entity
     private Board.Status prevSquareStatus = Board.Status.Captured;
     //
     public static Action playerReachedSafety;
-    public static Action playerDied;
     //
-    private Vector2 spawnPoint;
+    public Vector2 spawnPoint;
     private float deltaTime;
 
 
@@ -97,12 +95,6 @@ public class Player : Entity
             playerReachedSafety?.Invoke();
 
         prevSquareStatus = currentSquareStatus;
-    }
-
-    public void KillPlayer()
-    {
-        playerDied?.Invoke();
-        tm.position = spawnPoint;
     }
 
     // public void OnCollision(Collider selfCollder, Collider otherCollder)
