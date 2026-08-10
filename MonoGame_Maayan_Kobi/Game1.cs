@@ -66,7 +66,7 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         #region AudioManager init
-        //AudioManager.AddSong("theme", "Audio/Music/theme");
+        AudioManager.AddSong("theme", "Audio/OST/musinova_OSTMain");
         //AudioManager.AddSoundEffect("bounce", "Audio/SFX/bounce");
         AudioManager.AddSoundEffect("Boom", "Audio/SFX/atari_boom4");
         #endregion
@@ -90,7 +90,7 @@ public class Game1 : Game
     void Start()
     {
         board = SceneManager.Create<Board>();
-        //AudioManager.PlaySong("theme");
+        AudioManager.PlaySong("theme");
         
         enemy = SceneManager.Create<Qix>();
         //enemy.PlayAnimation();
