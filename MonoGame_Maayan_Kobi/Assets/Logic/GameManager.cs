@@ -71,7 +71,7 @@ public class GameManager : IUpdatable
 
     public void OnNextLevel()
     {
-        player.tm.position = player.spawnPoint;
+        player.tm.position = new Vector2(player.spawnPoint.X, player.spawnPoint.Y);
         currentPlayerLives = playerBaseLives;
 
         foreach (var enemy in allEnemies)
