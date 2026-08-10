@@ -1,10 +1,12 @@
-﻿using System.Numerics;
+﻿
+using Microsoft.Xna.Framework;
 
 namespace MonoGame_Maayan_Kobi;
 
 public class Entity : Animation
 {
-    protected float speedMovement;
+    public float speedMovement;
+    public Vector2 spawnPoint;
     public Entity(string spriteName) : base(spriteName)
     {
     }

@@ -6,6 +6,8 @@ namespace MonoGame_Maayan_Kobi;
 
 public class Enemy : Entity
 {
+    public Vector2 velocity = new Vector2(1,1);
+    
     //public Collider collider { get; }
     
     public Enemy(string spriteName) : base(spriteName)
@@ -21,7 +23,6 @@ public class Enemy : Entity
     {
         base.Start();
         
-        tm.position = Game1._screenCenter;
         tm.position.Y -= 300;
         tm.scale = new Vector2(0.3f, 0.3f);
     }

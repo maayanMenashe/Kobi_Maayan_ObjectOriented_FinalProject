@@ -9,14 +9,24 @@ public class GameManager : IUpdatable
     public static HashSet<Enemy> allEnemies = new();
     public static Player player;
 
-    private static int playerLives = 3;
+    private  int playerBaseLives = 3;
+    private static int currentPlayerLives;
+
+    private LevelManager levelManager;
     
     public static Action playerDied;
 
 
+    public GameManager()
+    {
+        levelManager = SceneManager.Create<LevelManager>();
+        levelManager.movedToNextLevel += OnNextLevel;
+    }
+
     public void Start()
     {
-        
+        currentPlayerLives = playerBaseLives;
+        Player.playerReachedSafety += OnPlayerReachedSafety;
     }
 
     public void Update(GameTime gameTime)
@@ -40,19 +50,29 @@ public class GameManager : IUpdatable
         playerDied?.Invoke();
         player.tm.position = player.spawnPoint;
         
-        playerLives--;
-        if (playerLives == 0)
+        currentPlayerLives--;
+        if (currentPlayerLives == 0)
         {
             // game over
         }
     }
 
-    // private static void OnPlayerReachedSafety()
-    // {
-    //     if (Board.IsGoalPercentageReached(goal))
-    //     {
-    //         clear
-    //     }
-    //     
-    // }
+    private static void OnPlayerReachedSafety()
+    {
+        if (Board.IsGoalPercentageReached(LevelManager.currentLevel.goalPercent))
+        {
+            LevelManager.NextLevel();
+        }
+    }
+
+    public void OnNextLevel()
+    {
+        player.tm.position = player.spawnPoint;
+        currentPlayerLives = playerBaseLives;
+
+        foreach (var enemy in allEnemies)
+        {
+            enemy.tm.position = enemy.spawnPoint;
+        }
+    }
 }

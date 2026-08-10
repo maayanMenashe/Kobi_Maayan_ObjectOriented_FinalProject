@@ -14,12 +14,15 @@ namespace MonoGame_Maayan_Kobi
         private Vector2 prevPos = Game1._screenCenter;
         private Vector2 nextPos;
         private Board.Status currentSquareStatus;
-        private Vector2 velocity = new Vector2(1,1);
         private float deltaTime;
+        
+        
         
 
         public Qix() : base("temp-player")
         {
+            spawnPoint = Game1._screenCenter;
+            tm.position = spawnPoint;
             speedMovement = 300;
             
             destRect.Width /= 3;

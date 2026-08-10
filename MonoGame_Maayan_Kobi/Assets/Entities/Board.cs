@@ -35,7 +35,7 @@ public class Board : Sprite
     
     
     // The Board
-    public static Status[,] grid = new Status[numOfRows,numOfColumns];
+    public static Status[,] grid;
     public static HashSet<Vector2> notCaptured = new HashSet<Vector2>();
     public static HashSet<Vector2> captured = new HashSet<Vector2>();
 
@@ -46,6 +46,7 @@ public class Board : Sprite
 
     public Board() : base(spriteName)
     {
+        ResetBoard();
         InitBoard();
 
         capturedBackground.rows = numOfRows;
@@ -72,6 +73,15 @@ public class Board : Sprite
             }
         }
         
+    }
+
+
+    public void ResetBoard()
+    {
+        GameManager.playerDied -= OnPlayerDeath;
+        captured.Clear();
+        notCaptured.Clear();
+        grid = new Status[numOfRows, numOfColumns];
     }
 
     public static void CaptureSquare(int row, int column)
@@ -111,7 +121,7 @@ public class Board : Sprite
     
     public static bool IsGoalPercentageReached(int goal)
     {
-        int percentageCleared = (captured.Count / grid.Length) * 100;
+        float percentageCleared = ((float)captured.Count / grid.Length) * 100;
         if (percentageCleared >= goal)
         {
             return true;

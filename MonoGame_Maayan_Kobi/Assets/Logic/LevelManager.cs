@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MonoGame_Maayan_Kobi;
 
@@ -6,28 +7,24 @@ public class LevelManager
 {
     public static Board currentBoard;
     public static LevelParams currentLevel;
-    private List<LevelParams> levels;
+    private static List<LevelParams> levels;
+
+    private static int levelNum = 1;
+
+    public Action movedToNextLevel;
 
 
-    public struct LevelParams()
+    public struct LevelParams(int levelNum, int goalPercent)
     {
-        int levelNum;
-        int goalPercent;
-        
-        public LevelParams(int levelNum, int goalPercent) : this()
-        {
-            this.levelNum = levelNum;
-            this.goalPercent = goalPercent;
-        }
+        public int levelNum = levelNum;
+        public int goalPercent = goalPercent;
     }
 
 
     public LevelManager()
     {
         currentBoard = SceneManager.Create<Board>();
-        
         InitLevelsList();
-
         currentLevel = levels[0];
     }
 
@@ -55,5 +52,12 @@ public class LevelManager
         // level 5
         LevelParams level5 = new LevelParams(5, 90);
         levels.Add(level5);
+    }
+
+    public static void NextLevel()
+    {
+        currentLevel = levels[levelNum];
+        levelNum++;
+        currentBoard.ResetBoard();
     }
 }

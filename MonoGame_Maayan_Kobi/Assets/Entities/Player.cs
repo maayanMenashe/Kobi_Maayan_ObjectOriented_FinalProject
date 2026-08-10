@@ -21,7 +21,6 @@ public class Player : Entity
     //
     public static Action playerReachedSafety;
     //
-    public Vector2 spawnPoint;
     private float deltaTime;
 
 
