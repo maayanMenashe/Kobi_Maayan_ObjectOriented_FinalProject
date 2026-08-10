@@ -68,6 +68,7 @@ public class Game1 : Game
         #region AudioManager init
         //AudioManager.AddSong("theme", "Audio/Music/theme");
         //AudioManager.AddSoundEffect("bounce", "Audio/SFX/bounce");
+        AudioManager.AddSoundEffect("Boom", "Audio/SFX/atari_boom4");
         #endregion
 
 
