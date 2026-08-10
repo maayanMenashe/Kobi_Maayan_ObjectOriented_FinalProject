@@ -23,6 +23,7 @@ namespace MonoGame_Maayan_Kobi.Assets.UIX
             lives.tm.position = new Vector2(100, 50);
             claimed.tm.position = new Vector2(200, 135);
             currentLevel.tm.position = new Vector2(1750, 50);
+            currentLevel.text = "test";
         }
 
         public void Draw(SpriteBatch spriteBatch)

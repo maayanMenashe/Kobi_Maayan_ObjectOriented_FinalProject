@@ -1,5 +1,4 @@
-﻿using MonoGame_Maayan_Kobi.Assets.UIX;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace MonoGame_Maayan_Kobi;
@@ -27,7 +26,6 @@ public class LevelManager
         currentBoard = SceneManager.Create<Board>();
         InitLevelsList();
         currentLevel = levels[0];
-        UIMain.CurrentLevel(currentLevel.levelNum);
     }
 
 
