@@ -11,7 +11,7 @@ public static class Utils
         return new Vector2(X, Y);
     }
 
-    public static Board.Status WhatSquareAmI(Transform tm)
+    public static Board.Status WhatSquareAmI(Transform tm) //Checks the current status of the square on the grid
     {
         Vector2 currentSquarePos = Utils.CheckCurrentSquare(tm.position);
         int currentSquareX = (int)currentSquarePos.X;
