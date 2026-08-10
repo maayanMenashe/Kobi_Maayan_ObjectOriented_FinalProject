@@ -18,6 +18,7 @@ public class Game1 : Game
     private Qix enemy = null;
     private Board board = null;
     private GameManager gameManager = null;
+    Texture2D texture;
     //
     private SpriteFont _fontOswald;
     //
@@ -66,7 +67,7 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         #region AudioManager init
-        //AudioManager.AddSong("theme", "Audio/Music/theme");
+        AudioManager.AddSong("theme", "Audio/OST/musinova_OSTMain");
         //AudioManager.AddSoundEffect("bounce", "Audio/SFX/bounce");
         AudioManager.AddSoundEffect("Boom", "Audio/SFX/atari_boom4");
         #endregion
@@ -79,9 +80,10 @@ public class Game1 : Game
         SpriteManager.AddSprite("temp-background", "Sprites/PH_Background");
         SpriteManager.AddSprite("temp-border", "Sprites/PH_Border");
         SpriteManager.AddSprite("temp-player", "Sprites/PH_Player");
-        SpriteManager.AddSprite("captured-area", "Sprites/Result_TestCard");
-        #endregion
+        SpriteManager.AddSprite("captured-area", "Sprites/screen_qix_screen_paint");
 
+        #endregion
+        texture = Content.Load<Texture2D>("Sprites/screen_qix_screen");
         lives.font = Content.Load<SpriteFont>("Fonts/Oswald");
         
         Start();
@@ -90,7 +92,7 @@ public class Game1 : Game
     void Start()
     {
         board = SceneManager.Create<Board>();
-        //AudioManager.PlaySong("theme");
+        AudioManager.PlaySong("theme");
         
         enemy = SceneManager.Create<Qix>();
         //enemy.PlayAnimation();
@@ -130,7 +132,7 @@ public class Game1 : Game
         GraphicsDevice.Clear(Color.DarkRed);
 
         _spriteBatch.Begin();
-
+        _spriteBatch.Draw(texture, new Vector2(0,0), Color.White);
         SceneManager.Instance.Draw(_spriteBatch);
         lives.Draw(_spriteBatch);
 
