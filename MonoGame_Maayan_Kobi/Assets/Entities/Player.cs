@@ -86,9 +86,12 @@ public class Player : Entity
         
         
         currentSquareStatus = Utils.WhatSquareAmI(tm.position, out currentSquareX, out currentSquareY);
-        
+
         if (currentSquareStatus == Board.Status.Uncaptured)
-            Board.grid[currentSquareX, currentSquareY] = Board.Status.Touched; // paint it black by the rolling stones
+        {
+            Board.grid[currentSquareX, currentSquareY] = Board.Status.Touched;
+            Board.touched.Add(new Vector2(currentSquareX, currentSquareY));
+        }
 
         if (currentSquareStatus == Board.Status.Captured && currentSquareStatus != prevSquareStatus)
         {

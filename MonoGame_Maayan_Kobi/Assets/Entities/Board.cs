@@ -85,6 +85,7 @@ public class Board : Sprite
         GameManager.playerDied -= OnPlayerDeath;
         captured.Clear();
         notCaptured.Clear();
+        touched.Clear();
         grid = new Status[numOfRows, numOfColumns];
     }
 
@@ -108,6 +109,7 @@ public class Board : Sprite
                 grid[(int)vector.X, (int)vector.Y] = Status.Uncaptured;
             }
         }
+        touched.Clear();
     }
 
     private void OnPlayerDeath()
@@ -121,6 +123,7 @@ public class Board : Sprite
                 grid[x, y] = Status.Uncaptured;
             }
         }
+        touched.Clear();
     }
     
     public static bool IsGoalPercentageReached(int goal, out float percentageCleared)
