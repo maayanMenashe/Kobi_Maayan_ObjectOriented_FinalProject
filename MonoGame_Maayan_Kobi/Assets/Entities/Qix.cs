@@ -27,7 +27,7 @@ namespace MonoGame_Maayan_Kobi
         {
             base.Update(gameTime);
             deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            tm.position += new Vector2(1f,1f) * velocity * (float)deltaTime * speedMovement;
+            tm.position += new Vector2(1f,1f) * velocity * deltaTime * speedMovement;
             currentSquareStatus = Utils.WhatSquareAmI(tm.position, out int curX, out int curY);
             if (Utils.IsOutOfBounds(tm.position, this) || currentSquareStatus == Board.Status.Captured)
             {
@@ -35,6 +35,8 @@ namespace MonoGame_Maayan_Kobi
                 ChangeDirection();
             }
             prevPos = tm.position;
+            destRect.X = (int)tm.position.X;
+            destRect.Y = (int)tm.position.Y;
         }
 
 

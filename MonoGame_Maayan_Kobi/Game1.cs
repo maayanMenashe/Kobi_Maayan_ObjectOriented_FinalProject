@@ -97,7 +97,7 @@ public class Game1 : Game
         player = SceneManager.Create<Player>();
         //player.PlayAnimation();
         
-        //gameManager = SceneManager.Create<GameManager>();
+        gameManager = SceneManager.Create<GameManager>();
 
         
 

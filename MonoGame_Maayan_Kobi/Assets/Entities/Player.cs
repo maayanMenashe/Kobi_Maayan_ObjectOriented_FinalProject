@@ -49,7 +49,6 @@ public class Player : Entity
     public override void Update(GameTime gameTime)
     {
         deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-        //float deltaTime = (float)deltaTime;
         
         
         if (Keyboard.GetState().IsKeyDown(Keys.D) || Keyboard.GetState().IsKeyDown(Keys.Right))
@@ -70,8 +69,11 @@ public class Player : Entity
         {
             tm.position += new Vector2(0, -speedMovement * deltaTime);
         }
+
+        destRect.X = (int)tm.position.X;
+        destRect.Y = (int)tm.position.Y;
         
-        //base.Update(gameTime);
+        base.Update(gameTime);
 
         
 

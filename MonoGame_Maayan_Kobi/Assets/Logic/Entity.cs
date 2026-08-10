@@ -9,8 +9,10 @@ public class Entity : Animation
     {
     }
 
-    protected void UpdatePos()
-    {
-        tm.position += new Vector2(speedMovement * (float)deltaTime, 0);
-    }
+    // protected void UpdatePos(float x, float y)
+    // {
+    //     tm.position += new Vector2(x,y);
+    //     destRect.X = (int)x;
+    //     destRect.Y = (int)y;
+    // }
 }
