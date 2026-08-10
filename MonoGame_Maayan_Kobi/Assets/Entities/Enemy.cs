@@ -23,7 +23,7 @@ public class Enemy : Animation
         tm.position.Y -= 300;
         tm.scale = new Vector2(0.3f, 0.3f);
     }
-    public override void Update(GameTime gameTime)
+    public virtual void Update(GameTime gameTime)
     {
         Action(gameTime);
     }

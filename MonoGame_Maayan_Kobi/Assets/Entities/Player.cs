@@ -22,6 +22,7 @@ public class Player : Animation
     private Board.Status prevSquareStatus = Board.Status.Captured;
     //
     public static Action playerReachedSafety;
+    public static Action playerDied;
 
 
     public Player() : base("temp-player")
@@ -68,11 +69,8 @@ public class Player : Animation
         //base.Update(gameTime);
 
         
-        if (tm.position.X < 0 || tm.position.Y < 0 || tm.position.X > Game1.ScreenWidth - texture.Width/2f + 15|| tm.position.Y > Game1.ScreenHeight - texture.Height/2f - 10)
-        {
-            isOutOfBounds = true;
-        }
-        if (isOutOfBounds)
+
+        if (Utils.IsOutOfBounds(tm.position, prevPosition, this))
         {
             tm.position =  prevPosition;
             isOutOfBounds = false;
