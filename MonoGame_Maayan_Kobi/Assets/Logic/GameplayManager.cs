@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using MonoGame_Maayan_Kobi.Assets.UIX;
 
 namespace MonoGame_Maayan_Kobi;
 
-public class GameManager : IUpdatable
+public class GameplayManager : IUpdatable
 {
     public static HashSet<Enemy> allEnemies = new();
     public static Player player;
@@ -18,7 +17,7 @@ public class GameManager : IUpdatable
     public static Action playerDied;
 
 
-    public GameManager()
+    public GameplayManager()
     {
         levelManager = SceneManager.Create<LevelManager>();
         levelManager.movedToNextLevel += OnNextLevel;
@@ -47,7 +46,7 @@ public class GameManager : IUpdatable
 
     public static void PlayPlayerDeathSequence()
     {
-        AudioManager.PlaySoundEffect("Boom");
+        AudioManager.PlaySoundEffect(AudioManager.playerDeathSXF);
         playerDied?.Invoke();
         player.tm.position = player.spawnPoint;
         
@@ -64,6 +63,7 @@ public class GameManager : IUpdatable
         int requiredPrecent = LevelManager.currentLevel.goalPercent;
         if (Board.IsGoalPercentageReached(requiredPrecent, out float currentPrecent))
         {
+            //player.canMove = false;
             LevelManager.NextLevel();
         }
         UIMain.ClaimedPercentage((int)currentPrecent, requiredPrecent);
@@ -71,12 +71,13 @@ public class GameManager : IUpdatable
 
     public void OnNextLevel()
     {
-        player.tm.position = new Vector2(player.spawnPoint.X, player.spawnPoint.Y);
+        player.tm.position = player.spawnPoint;
         currentPlayerLives = playerBaseLives;
 
         foreach (var enemy in allEnemies)
         {
             enemy.tm.position = enemy.spawnPoint;
         }
+        // also reset the destrects
     }
 }

@@ -1,5 +1,4 @@
-﻿using MonoGame_Maayan_Kobi.Assets.UIX;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace MonoGame_Maayan_Kobi;

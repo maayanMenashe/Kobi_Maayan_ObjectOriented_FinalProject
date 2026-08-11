@@ -6,6 +6,11 @@ namespace MonoGame_Maayan_Kobi;
 
 public static class AudioManager
 {
+    // SFX names
+    public static string playerDeathSXF = "Boom";
+    public static string capturedSXF = "Acquired";
+    
+    
     private static List<SoundEffectInstance> _soundEffectsInstance = new();
 
     private static float prevVolSong = 1;

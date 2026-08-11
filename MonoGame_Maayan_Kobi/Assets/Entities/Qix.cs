@@ -46,7 +46,7 @@ namespace MonoGame_Maayan_Kobi
             
             
             if (currentSquareStatus == Board.Status.Touched)
-                GameManager.PlayPlayerDeathSequence();
+                GameplayManager.PlayPlayerDeathSequence();
         }
 
 

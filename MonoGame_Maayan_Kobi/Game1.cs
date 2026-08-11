@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-using MonoGame_Maayan_Kobi.Assets.UIX;
 
 namespace MonoGame_Maayan_Kobi;
 
@@ -18,7 +17,7 @@ public class Game1 : Game
     private Player player = null;
     private Qix enemy = null;
     private Board board = null;
-    private GameManager gameManager = null;
+    private GameplayManager _gameplayManager = null;
     Texture2D texture;
     //
     private SpriteFont _fontOswald;
@@ -89,7 +88,7 @@ public class Game1 : Game
 
     void Start() //Yakir's Save
     {
-        gameManager = SceneManager.Create<GameManager>();
+        _gameplayManager = SceneManager.Create<GameplayManager>();
         //board = SceneManager.Create<Board>();
         AudioManager.PlaySong("theme");
         

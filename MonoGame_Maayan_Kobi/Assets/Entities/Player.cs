@@ -23,10 +23,11 @@ public class Player : Entity
     //
     private float deltaTime;
 
+    public bool canMove = true;
 
     public Player() : base("temp-player")
     {
-        GameManager.player = this;
+        GameplayManager.player = this;
         speedMovement = 300;
         //collider = SceneManager.Create<Collider>();
         //collider.Parent = this;
@@ -48,32 +49,35 @@ public class Player : Entity
 
     public override void Update(GameTime gameTime)
     {
-        deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-        
-        
-        if (Keyboard.GetState().IsKeyDown(Keys.D) || Keyboard.GetState().IsKeyDown(Keys.Right))
-        {
-            effects = SpriteEffects.FlipHorizontally;
-            tm.position += new Vector2(speedMovement * deltaTime, 0);
-        }
-        else if (Keyboard.GetState().IsKeyDown(Keys.A) || Keyboard.GetState().IsKeyDown(Keys.Left))
-        {
-            effects = SpriteEffects.None;
-            tm.position += new Vector2(-speedMovement * deltaTime, 0);
-        }
-        else if (Keyboard.GetState().IsKeyDown(Keys.S) || Keyboard.GetState().IsKeyDown(Keys.Down))
-        {
-            tm.position += new Vector2(0, speedMovement * deltaTime);
-        }
-        else if (Keyboard.GetState().IsKeyDown(Keys.W) || Keyboard.GetState().IsKeyDown(Keys.Up))
-        {
-            tm.position += new Vector2(0, -speedMovement * deltaTime);
-        }
-
-        destRect.X = (int)tm.position.X;
-        destRect.Y = (int)tm.position.Y;
-        
         base.Update(gameTime);
+
+        deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+        if (canMove)
+        {
+            if (Keyboard.GetState().IsKeyDown(Keys.D) || Keyboard.GetState().IsKeyDown(Keys.Right))
+            {
+                effects = SpriteEffects.FlipHorizontally;
+                tm.position += new Vector2(speedMovement * deltaTime, 0);
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.A) || Keyboard.GetState().IsKeyDown(Keys.Left))
+            {
+                effects = SpriteEffects.None;
+                tm.position += new Vector2(-speedMovement * deltaTime, 0);
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.S) || Keyboard.GetState().IsKeyDown(Keys.Down))
+            {
+                tm.position += new Vector2(0, speedMovement * deltaTime);
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.W) || Keyboard.GetState().IsKeyDown(Keys.Up))
+            {
+                tm.position += new Vector2(0, -speedMovement * deltaTime);
+            }
+
+            destRect.X = (int)tm.position.X;
+            destRect.Y = (int)tm.position.Y;
+        }
+        
 
         
 
@@ -95,27 +99,10 @@ public class Player : Entity
 
         if (currentSquareStatus == Board.Status.Captured && currentSquareStatus != prevSquareStatus)
         {
-            AudioManager.PlaySoundEffect("Acquired");
+            AudioManager.PlaySoundEffect(AudioManager.capturedSXF);
             playerReachedSafety?.Invoke();
         }
 
         prevSquareStatus = currentSquareStatus;
     }
-
-    // public void OnCollision(Collider selfCollder, Collider otherCollder)
-    // {
-    //     isOutOfBounds = true;
-    //     Console.WriteLine("Self " + selfCollder.Parent + " is colliding with " + otherCollder.Parent);
-    // }
-    //
-    // public void OnTrigger(Collider selfCollder, Collider otherCollder)
-    // {
-    //     
-    //     AudioManager.PlaySoundEffect("collect");
-    //     
-    //     Console.WriteLine("Self " + selfCollder.Parent + " is trigger with " + otherCollder.Parent);
-    //     
-    //     SceneManager.Remove(otherCollder);
-    //     SceneManager.Remove(otherCollder.Parent);
-    // }
 }

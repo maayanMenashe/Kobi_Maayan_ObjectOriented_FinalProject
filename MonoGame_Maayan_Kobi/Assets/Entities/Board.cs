@@ -50,14 +50,12 @@ public class Board : Sprite
     public Board() : base(spriteName)
     {
         ResetBoard();
-        InitBoard();
-
         capturedBackground.rows = numOfRows;
         capturedBackground.columns = numOfColumns;
         capturedBackground.texture = texture;
         singleSquareWidth = Game1.ScreenWidth / numOfColumns;
         singleSquareHeight = Game1.ScreenHeight / numOfRows;
-        GameManager.playerDied += OnPlayerDeath;
+        GameplayManager.playerDied += OnPlayerDeath;
     }
 
     #endregion
@@ -82,11 +80,12 @@ public class Board : Sprite
 
     public void ResetBoard()
     {
-        GameManager.playerDied -= OnPlayerDeath;
+        GameplayManager.playerDied -= OnPlayerDeath;
         captured.Clear();
         notCaptured.Clear();
         touched.Clear();
         grid = new Status[numOfRows, numOfColumns];
+        InitBoard();
     }
 
     public static void CaptureSquare(int row, int column)
@@ -146,13 +145,26 @@ public class Board : Sprite
 
     public override void Draw(SpriteBatch spriteBatch)
     {
+        foreach (var square in touched)
+        {
+            spriteBatch.Draw(
+                texture, 
+                new Rectangle((int)(square.Y * singleSquareWidth), (int)(square.X * singleSquareHeight), (int)singleSquareWidth, (int)singleSquareHeight),
+                capturedBackground[(int)square.X, (int)square.Y],
+                Color.Black,
+                MathHelper.ToRadians(tm.rotation),
+                Vector2.Zero,
+                effects,
+                0
+            );
+        }
         
         foreach (var square in captured)
         {
             spriteBatch.Draw(
                 texture, 
-                new Rectangle((int)(square.X * singleSquareWidth), (int)(square.Y * singleSquareHeight), (int)singleSquareWidth, (int)singleSquareHeight),
-                capturedBackground[(int)square.Y, (int)square.X],
+                new Rectangle((int)(square.Y * singleSquareWidth), (int)(square.X * singleSquareHeight), (int)singleSquareWidth, (int)singleSquareHeight),
+                capturedBackground[(int)square.X, (int)square.Y],
                 color,
                 MathHelper.ToRadians(tm.rotation),
                 Vector2.Zero,

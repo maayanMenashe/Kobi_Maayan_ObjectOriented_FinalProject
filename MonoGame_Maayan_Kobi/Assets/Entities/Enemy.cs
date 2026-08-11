@@ -12,7 +12,7 @@ public class Enemy : Entity
     
     public Enemy(string spriteName) : base(spriteName)
     {
-        GameManager.allEnemies.Add(this);
+        GameplayManager.allEnemies.Add(this);
         // collider = SceneManager.Create<Collider>();
         // collider.Parent = this;
         // collider.IsTrigger = true;

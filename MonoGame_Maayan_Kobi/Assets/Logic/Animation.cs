@@ -45,12 +45,13 @@ public class Animation : Sprite
 
     public override void Update(GameTime gameTime)
     { 
+        base.Update(gameTime);
+
        if (!isAnimating) return;
         
        if (CanMoveFrame(gameTime))
            MoveFrame();
        
-       base.Update(gameTime);
     }
 
     bool CanMoveFrame(GameTime gameTime)
