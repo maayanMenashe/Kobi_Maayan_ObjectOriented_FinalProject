@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace MonoGame_Maayan_Kobi;
 
@@ -10,7 +11,7 @@ public class GameplayManager : IUpdatable
     public static Player player;
 
     private  int playerBaseLives = 3;
-    private static int currentPlayerLives;
+    private static int currentPlayerLives = 3;
     
     public static int PlayerLives => currentPlayerLives;
     public static float PrecentCleared => boardPrecentCleared;
@@ -38,14 +39,24 @@ public class GameplayManager : IUpdatable
 
     public void Update(GameTime gameTime)
     {
-        if (player != null && allEnemies.Count > 0)
+        if (!GameStateManager.IsPaused())
         {
-            foreach (var enemy in allEnemies)
+            if (player != null && allEnemies.Count > 0)
             {
-                if (player.destRect.Intersects(enemy.destRect))
+                foreach (var enemy in allEnemies)
                 {
-                    PlayPlayerDeathSequence();
+                    if (player.destRect.Intersects(enemy.destRect))
+                    {
+                        PlayPlayerDeathSequence();
+                    }
                 }
+            }
+        }
+        else
+        {
+            if (Keyboard.GetState().IsKeyDown(Keys.Enter) )
+            {
+                GameStateManager.SetState(GameStateManager.GameState.Gameplay);
             }
         }
     }

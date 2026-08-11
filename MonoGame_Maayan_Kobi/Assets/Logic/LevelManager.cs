@@ -26,7 +26,6 @@ public class LevelManager
         currentBoard = SceneManager.Create<Board>();
         InitLevelsList();
         currentLevel = levels[0];
-        UIManager.CurrentLevel(currentLevel.levelNum);
     }
 
 

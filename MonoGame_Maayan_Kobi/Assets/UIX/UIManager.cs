@@ -20,22 +20,20 @@ namespace MonoGame_Maayan_Kobi
             lives.font = wantedFont;
             claimed.font = wantedFont;
             currentLevel.font = wantedFont;
-            lives.tm.position = new Vector2(100, 50);
-            claimed.tm.position = new Vector2(200, 135);
-            currentLevel.tm.position = new Vector2(1750, 50);
+
+            RemainingLives(GameplayManager.PlayerLives);
+            CurrentLevel(LevelManager.currentLevel.levelNum);
             
-            //lives.tm.position = wantedFont.MeasureString(lives.text) * 0.5f;
-            //currentLevel.tm.position = wantedFont.MeasureString(currentLevel.text) * 0.5f + new Vector2(Game1.ScreenWidth/2f, 0);
-            //claimed.tm.position = new Vector2(Game1.ScreenWidth, 0) - wantedFont.MeasureString(claimed.text);
-
-
+            lives.tm.position = new Vector2(100, 50);
+            claimed.tm.position = new Vector2(1650, 50);
+            currentLevel.tm.position = new Vector2(900, 30);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            //lives.Draw(spriteBatch);
-            //claimed.Draw(spriteBatch);
-            //currentLevel.Draw(spriteBatch);
+            // lives.Draw(spriteBatch);
+            // claimed.Draw(spriteBatch);
+            // currentLevel.Draw(spriteBatch);
         }
         public static void ClaimedPercentage(int cur, int goal)
         {
@@ -47,7 +45,7 @@ namespace MonoGame_Maayan_Kobi
         }
         public static void CurrentLevel(int curLevel)
         {
-            lives.text = curLevel.ToString();
+            currentLevel.text = curLevel.ToString();
         }
     }
 }

@@ -53,7 +53,7 @@ public class Player : Entity
 
         deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-        if (canMove)
+        if (!GameStateManager.IsPaused())
         {
             if (Keyboard.GetState().IsKeyDown(Keys.D) || Keyboard.GetState().IsKeyDown(Keys.Right))
             {
@@ -76,33 +76,34 @@ public class Player : Entity
 
             destRect.X = (int)tm.position.X;
             destRect.Y = (int)tm.position.Y;
+
+
+
+
+            if (Utils.IsOutOfBounds(tm.position, this))
+            {
+                tm.position = prevPosition;
+                isOutOfBounds = false;
+            }
+
+            prevPosition = tm.position;
+
+
+            currentSquareStatus = Utils.CurrentSquareStatus(tm.position, out currentSquareX, out currentSquareY);
+
+            if (currentSquareStatus == Board.Status.Uncaptured)
+            {
+                Board.grid[currentSquareY, currentSquareX] = Board.Status.Touched;
+                Board.touched.Add(new Vector2(currentSquareY, currentSquareX));
+            }
+
+            if (currentSquareStatus == Board.Status.Captured && currentSquareStatus != prevSquareStatus)
+            {
+                AudioManager.PlaySoundEffect(AudioManager.capturedSXF);
+                playerReachedSafety?.Invoke();
+            }
+
+            prevSquareStatus = currentSquareStatus;
         }
-        
-
-        
-
-        if (Utils.IsOutOfBounds(tm.position, this))
-        {
-            tm.position =  prevPosition;
-            isOutOfBounds = false;
-        }
-        prevPosition =  tm.position;
-        
-        
-        currentSquareStatus = Utils.CurrentSquareStatus(tm.position, out currentSquareX, out currentSquareY);
-
-        if (currentSquareStatus == Board.Status.Uncaptured)
-        {
-            Board.grid[currentSquareY, currentSquareX] = Board.Status.Touched;
-            Board.touched.Add(new Vector2(currentSquareY, currentSquareX));
-        }
-
-        if (currentSquareStatus == Board.Status.Captured && currentSquareStatus != prevSquareStatus)
-        {
-            AudioManager.PlaySoundEffect(AudioManager.capturedSXF);
-            playerReachedSafety?.Invoke();
-        }
-
-        prevSquareStatus = currentSquareStatus;
     }
 }

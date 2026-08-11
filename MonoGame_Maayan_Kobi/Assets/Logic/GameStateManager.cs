@@ -12,9 +12,9 @@ public class GameStateManager : IDrawable
         Victory,
         GameOver
     }
-    public GameState CurrentState { get; private set; } = GameState.MainMenu;
+    public static GameState CurrentState { get; private set; } = GameState.MainMenu;
 
-    public bool IsPaused()
+    public static bool IsPaused()
     {
         if (CurrentState == GameState.Gameplay)
         {
@@ -23,7 +23,7 @@ public class GameStateManager : IDrawable
         return true;
     }
 
-    public void SetState(GameState newState)
+    public static void SetState(GameState newState)
     {
         CurrentState = newState;
     }
@@ -56,7 +56,10 @@ public class GameStateManager : IDrawable
 
         if (BG != null && screenText != null)
         {
-            spriteBatch.Draw(BG,Vector2.Zero, Color.White);
+            Vector2 rightEdge = new Vector2(Game1.ScreenWidth, Game1.ScreenHeight);
+            Vector2 bgSize = new Vector2(BG.Width, BG.Height);
+            Vector2 deadSpace = rightEdge - bgSize;
+            spriteBatch.Draw(BG,Vector2.Zero + deadSpace/2, Color.White);
             screenText.Draw(spriteBatch);
         }
     }

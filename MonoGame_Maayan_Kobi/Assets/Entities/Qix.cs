@@ -31,22 +31,25 @@ namespace MonoGame_Maayan_Kobi
 
         public override void Update(GameTime gameTime)
         {
-            base.Update(gameTime);
-            deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            tm.position += new Vector2(1f,1f) * velocity * deltaTime * speedMovement;
-            currentSquareStatus = Utils.CurrentSquareStatus(tm.position, out int currentSquareX, out int currentSquareY);
-            if (Utils.IsOutOfBounds(tm.position, this) || currentSquareStatus == Board.Status.Captured)
+            if (!GameStateManager.IsPaused())
             {
-                tm.position = prevPos;
-                ChangeDirection();
+                base.Update(gameTime);
+                deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+                tm.position += new Vector2(1f,1f) * velocity * deltaTime * speedMovement;
+                currentSquareStatus = Utils.CurrentSquareStatus(tm.position, out int currentSquareX, out int currentSquareY);
+                if (Utils.IsOutOfBounds(tm.position, this) || currentSquareStatus == Board.Status.Captured)
+                {
+                    tm.position = prevPos;
+                    ChangeDirection();
+                }
+                prevPos = tm.position;
+                destRect.X = (int)tm.position.X;
+                destRect.Y = (int)tm.position.Y;
+            
+            
+                if (currentSquareStatus == Board.Status.Touched)
+                    GameplayManager.PlayPlayerDeathSequence();
             }
-            prevPos = tm.position;
-            destRect.X = (int)tm.position.X;
-            destRect.Y = (int)tm.position.Y;
-            
-            
-            if (currentSquareStatus == Board.Status.Touched)
-                GameplayManager.PlayPlayerDeathSequence();
         }
 
 

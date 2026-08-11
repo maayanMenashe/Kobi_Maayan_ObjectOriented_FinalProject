@@ -17,7 +17,8 @@ public class Game1 : Game
     private Player player = null;
     private Qix enemy = null;
     private Board board = null;
-    private GameplayManager _gameplayManager = null;
+    private GameplayManager gameplayManager = null;
+    private GameStateManager gameStateManager = null;
     Texture2D texture;
     //
     public static SpriteFont _fontOswald;
@@ -94,12 +95,11 @@ public class Game1 : Game
 
     void Start() //Yakir's Save
     {
-        _gameplayManager = SceneManager.Create<GameplayManager>();
-        //board = SceneManager.Create<Board>();
+        gameplayManager = SceneManager.Create<GameplayManager>();
+        gameStateManager = SceneManager.Create<GameStateManager>();
         AudioManager.PlaySong("theme");
         
         enemy = SceneManager.Create<Qix>();
-        //enemy.PlayAnimation();
         
         player = SceneManager.Create<Player>();
         //player.PlayAnimation();
