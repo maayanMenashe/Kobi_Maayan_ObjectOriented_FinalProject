@@ -29,8 +29,6 @@ public class Player : Entity
     {
         GameplayManager.player = this;
         speedMovement = 300;
-        //collider = SceneManager.Create<Collider>();
-        //collider.Parent = this;
         playerReachedSafety += Board.OnPlayerReachedSafety;
     }
 
@@ -105,5 +103,11 @@ public class Player : Entity
 
             prevSquareStatus = currentSquareStatus;
         }
+    }
+
+
+    public void OnPlayerDeath()
+    {
+        prevSquareStatus = Board.Status.Captured;
     }
 }

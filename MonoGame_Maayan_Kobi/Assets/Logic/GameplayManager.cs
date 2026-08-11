@@ -34,6 +34,7 @@ public class GameplayManager : IUpdatable
     {
         currentPlayerLives = playerBaseLives;
         Player.playerReachedSafety += OnPlayerReachedSafety;
+        playerDied += player.OnPlayerDeath;
         OnPlayerReachedSafety();
     }
 
