@@ -9,17 +9,21 @@ public static class Menu
     private static string tutorialText = "Use WASD or arrow keys to move\r\nClaim as much territory as required to advance\r\nto the next level\r\nAvoid the notorious LogoBounce or lose a life\r\n\r\n--PRESS ENTER TO START THE DIGITAL LIBERATION--";
     private static string victoryText;
     private static string gameOverText;
+    private static string youWinText = "HOLY SHIT ITS 07:33 AM I CANT BELIEVE I FINISHED!!!!!!!\r\nI mean...\r\nThanks for playing...?\r\n\r\nSee you when i make a roguelike version of this!!";
 
     
     // texture names
     private static string tutorialBGName = "Tutorial";
     private static string victoryBGName = "Victory";
     private static string gameOverBGName = "GameOver";
+    private static string youWinBGName = "YouWin";
     
     // textures
     private static Texture2D tutorialBG = ResourcesManager<Texture2D>.GetResource(tutorialBGName);
     private static Texture2D victoryBG = ResourcesManager<Texture2D>.GetResource(victoryBGName);
     private static Texture2D gameOverBG = ResourcesManager<Texture2D>.GetResource(gameOverBGName);
+    private static Texture2D youWinBG = ResourcesManager<Texture2D>.GetResource(youWinBGName);
+
 
     // font
     public static SpriteFont font = Game1._fontOswald;
@@ -53,6 +57,15 @@ public static class Menu
         screenText.text = gameOverText;
         screenText.tm.position = Game1._screenCenter;
         return gameOverBG;
+    }
+    
+    public static Texture2D GetBackgroundAndTextYouWin(out Text screenText)
+    {
+        screenText = new Text();
+        screenText.font = font;
+        screenText.text = youWinText;
+        screenText.tm.position = Game1._screenCenter;
+        return youWinBG;
     }
     
 }

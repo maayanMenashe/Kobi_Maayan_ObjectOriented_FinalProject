@@ -10,7 +10,8 @@ public class GameStateManager : IDrawable
         MainMenu,
         Gameplay,
         Victory,
-        GameOver
+        GameOver,
+        YouWin
     }
     public static GameState CurrentState { get; private set; } = GameState.MainMenu;
 
@@ -51,6 +52,10 @@ public class GameStateManager : IDrawable
 
             case GameState.GameOver:
                 BG = Menu.GetBackgroundAndTextGameOver(LevelManager.currentLevel.levelNum, out screenText);
+                break;
+            
+            case GameState.YouWin:
+                BG = Menu.GetBackgroundAndTextYouWin(out screenText);
                 break;
         }
 

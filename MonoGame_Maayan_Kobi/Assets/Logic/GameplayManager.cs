@@ -27,7 +27,7 @@ public class GameplayManager : IUpdatable
     public GameplayManager()
     {
         levelManager = SceneManager.Create<LevelManager>();
-        levelManager.movedToNextLevel += OnNextLevel;
+        LevelManager.movedToNextLevel += OnNextLevel;
     }
 
     public void Start()
@@ -71,7 +71,8 @@ public class GameplayManager : IUpdatable
         UIManager.RemainingLives(currentPlayerLives);
         if (currentPlayerLives == 0)
         {
-            // game over
+            GameStateManager.SetState(GameStateManager.GameState.GameOver);
+            LevelManager.ResetGame();
         }
     }
 
@@ -80,7 +81,6 @@ public class GameplayManager : IUpdatable
         int requiredPrecent = LevelManager.currentLevel.goalPercent;
         if (Board.IsGoalPercentageReached(requiredPrecent, out boardPrecentCleared))
         {
-            //player.canMove = false;
             LevelManager.NextLevel();
         }
         UIManager.ClaimedPercentage((int)boardPrecentCleared, requiredPrecent);
@@ -88,13 +88,15 @@ public class GameplayManager : IUpdatable
 
     public void OnNextLevel()
     {
+        if (GameStateManager.CurrentState != GameStateManager.GameState.GameOver && GameStateManager.CurrentState != GameStateManager.GameState.YouWin)
+        {
+            GameStateManager.SetState(GameStateManager.GameState.Victory);
+        }
         player.tm.position = player.spawnPoint;
         currentPlayerLives = playerBaseLives;
-
         foreach (var enemy in allEnemies)
         {
             enemy.tm.position = enemy.spawnPoint;
         }
-        // also reset the destrects
     }
 }

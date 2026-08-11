@@ -11,7 +11,7 @@ public class LevelManager
 
     private static int levelNum = 1;
 
-    public Action movedToNextLevel;
+    public static Action movedToNextLevel;
 
 
     public struct LevelParams(int levelNum, int goalPercent)
@@ -42,7 +42,7 @@ public class LevelManager
         levels.Add(level2);
         
         // level 3
-        LevelParams level3 = new LevelParams(3, 85);
+        LevelParams level3 = new LevelParams(3, 1);
         levels.Add(level3);
         
         // level 4
@@ -56,8 +56,23 @@ public class LevelManager
 
     public static void NextLevel()
     {
+        if (levels.Count == levelNum)
+        {
+            GameStateManager.SetState(GameStateManager.GameState.YouWin);
+            ResetGame();
+            return;
+        }
         currentLevel = levels[levelNum];
         levelNum++;
         currentBoard.ResetBoard();
+        UIManager.CurrentLevel(levelNum);
+        UIManager.ClaimedPercentage(0, currentLevel.goalPercent);
+        movedToNextLevel?.Invoke();
+    }
+
+    public static void ResetGame()
+    {
+        levelNum = 0;
+        NextLevel();
     }
 }

@@ -88,6 +88,7 @@ public class Game1 : Game
         SpriteManager.AddSprite("Tutorial", "Sprites/TutorialBackground");
         SpriteManager.AddSprite("Victory", "Sprites/Victory_Background");
         SpriteManager.AddSprite("GameOver", "Sprites/GameOver_Background");
+        SpriteManager.AddSprite("YouWin", "Sprites/screen_qix_screen");
         #endregion
         texture = Content.Load<Texture2D>("Sprites/screen_qix_screen");
         Start();
@@ -102,15 +103,12 @@ public class Game1 : Game
         enemy = SceneManager.Create<Qix>();
         
         player = SceneManager.Create<Player>();
-        //player.PlayAnimation();
         
 
         ui.Start();
         
         SceneManager.Instance.Start();
-
-        //player.collider.RegisterOnCollision(player.OnCollision);
-        //player.collider.RegisterOnTrigger(player.OnTrigger);
+        
 
     }
 
