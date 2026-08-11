@@ -8,6 +8,10 @@ public static class DFS
 {
     public static void MarkAllEnemySquares(Vector2 pos)
     {
+        if ( Board.grid[(int)pos.Y, (int)pos.X] == Board.Status.Captured)
+        {
+            return;
+        }
         Board.grid[(int)pos.Y, (int)pos.X] = Board.Status.Enemy;
         
         Stack<Vector2> toCheck = new Stack<Vector2>();

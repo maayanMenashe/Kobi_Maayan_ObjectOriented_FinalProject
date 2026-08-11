@@ -15,7 +15,8 @@ public class Game1 : Game
     public static Vector2 _screenCenter;
     //
     private Player player = null;
-    private Qix enemy = null;
+    private Qix qix = null;
+    private Glitch glitch = null;
     private Board board = null;
     private GameplayManager gameplayManager = null;
     private GameStateManager gameStateManager = null;
@@ -84,6 +85,7 @@ public class Game1 : Game
         SpriteManager.AddSprite("Pixel", "Sprites/pixel");
         SpriteManager.AddSprite("temp-player", "Sprites/PH_Player");
         SpriteManager.AddSprite("DVDie", "Sprites/DVDIE");
+        SpriteManager.AddSprite("Glitch", "Sprites/Enemy_Glitch");
         SpriteManager.AddSprite("captured-area", "Sprites/screen_qix_screen_paint");
         SpriteManager.AddSprite("Tutorial", "Sprites/TutorialBackground");
         SpriteManager.AddSprite("Victory", "Sprites/Victory_Background");
@@ -100,7 +102,8 @@ public class Game1 : Game
         gameStateManager = SceneManager.Create<GameStateManager>();
         AudioManager.PlaySong("theme");
         
-        enemy = SceneManager.Create<Qix>();
+        qix = SceneManager.Create<Qix>();
+        //glitch = SceneManager.Create<Glitch>();
         
         player = SceneManager.Create<Player>();
         
