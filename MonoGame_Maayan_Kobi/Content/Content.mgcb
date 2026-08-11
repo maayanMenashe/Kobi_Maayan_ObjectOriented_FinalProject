@@ -62,6 +62,30 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Enemy_Glitch.png
 
+#begin Sprites/lucid-origin_A_dark_moody_CRT_television_screen_with_a_shattered_glass_effect_intense_static_-0 (3).jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/lucid-origin_A_dark_moody_CRT_television_screen_with_a_shattered_glass_effect_intense_static_-0 (3).jpg
+
+#begin Sprites/lucid-origin_Prompt_A_triumphant_retro_80s_arcade_screen_aesthetic_bright_neon_colors_fading_-0 (1).jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/lucid-origin_Prompt_A_triumphant_retro_80s_arcade_screen_aesthetic_bright_neon_colors_fading_-0 (1).jpg
+
 #begin Sprites/PH_Background.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -193,4 +217,16 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/screen_qix_screen.png
+
+#begin Sprites/TutorialBackground.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/TutorialBackground.jpg
 

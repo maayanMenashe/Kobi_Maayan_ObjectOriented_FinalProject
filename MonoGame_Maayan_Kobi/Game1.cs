@@ -20,11 +20,14 @@ public class Game1 : Game
     private GameplayManager _gameplayManager = null;
     Texture2D texture;
     //
-    private SpriteFont _fontOswald;
-    UIMain ui = new UIMain();
+    public static SpriteFont _fontOswald;
+    UIManager ui = new UIManager();
     //
     public const int ScreenWidth = 1920;
     public const int ScreenHeight = 1080;
+    
+    // public const int ScreenWidth = 1904;
+    // public const int ScreenHeight = 1071;
 
     #region ResourcesManager   
     private ResourcesManager<Texture2D> textureManager;
@@ -81,6 +84,9 @@ public class Game1 : Game
         SpriteManager.AddSprite("temp-player", "Sprites/PH_Player");
         SpriteManager.AddSprite("DVDie", "Sprites/DVDIE");
         SpriteManager.AddSprite("captured-area", "Sprites/screen_qix_screen_paint");
+        SpriteManager.AddSprite("Tutorial", "Sprites/TutorialBackground");
+        SpriteManager.AddSprite("Victory", "Sprites/Victory_Background");
+        SpriteManager.AddSprite("GameOver", "Sprites/GameOver_Background");
         #endregion
         texture = Content.Load<Texture2D>("Sprites/screen_qix_screen");
         Start();

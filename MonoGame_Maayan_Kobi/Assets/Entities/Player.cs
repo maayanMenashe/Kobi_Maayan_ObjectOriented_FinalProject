@@ -37,7 +37,7 @@ public class Player : Entity
     public override void Start()
     {
         base.Start();
-        spawnPoint = new Vector2(texture.Width, texture.Height) / 4f;
+        spawnPoint = new Vector2(texture.Width, texture.Height) / 8f;
         tm.position = spawnPoint;
         tm.scale = new Vector2(0.3f, 0.3f);
         
@@ -89,12 +89,12 @@ public class Player : Entity
         prevPosition =  tm.position;
         
         
-        currentSquareStatus = Utils.WhatSquareAmI(tm.position, out currentSquareX, out currentSquareY);
+        currentSquareStatus = Utils.CurrentSquareStatus(tm.position, out currentSquareX, out currentSquareY);
 
         if (currentSquareStatus == Board.Status.Uncaptured)
         {
-            Board.grid[currentSquareX, currentSquareY] = Board.Status.Touched;
-            Board.touched.Add(new Vector2(currentSquareX, currentSquareY));
+            Board.grid[currentSquareY, currentSquareX] = Board.Status.Touched;
+            Board.touched.Add(new Vector2(currentSquareY, currentSquareX));
         }
 
         if (currentSquareStatus == Board.Status.Captured && currentSquareStatus != prevSquareStatus)

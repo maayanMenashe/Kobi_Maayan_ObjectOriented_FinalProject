@@ -34,7 +34,7 @@ namespace MonoGame_Maayan_Kobi
             base.Update(gameTime);
             deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             tm.position += new Vector2(1f,1f) * velocity * deltaTime * speedMovement;
-            currentSquareStatus = Utils.WhatSquareAmI(tm.position, out int currentSquareX, out int currentSquareY);
+            currentSquareStatus = Utils.CurrentSquareStatus(tm.position, out int currentSquareX, out int currentSquareY);
             if (Utils.IsOutOfBounds(tm.position, this) || currentSquareStatus == Board.Status.Captured)
             {
                 tm.position = prevPos;
@@ -56,12 +56,12 @@ namespace MonoGame_Maayan_Kobi
             Vector2 nextStep =  tm.position + new Vector2(1f,1f) * velocity * deltaTime * speedMovement;
             Vector2 nextVerticalPos = new Vector2(nextStep.X, tm.position.Y);
             Vector2 nextHorizontalPos = new Vector2(tm.position.X, nextStep.Y);
-            if (Utils.IsOutOfBounds(nextVerticalPos, this) || Utils.WhatSquareAmI(nextVerticalPos, out int a, out int b) == Board.Status.Captured)
+            if (Utils.IsOutOfBounds(nextVerticalPos, this) || Utils.CurrentSquareStatus(nextVerticalPos, out int a, out int b) == Board.Status.Captured)
             {
                 velocity *= new Vector2(-1, 1);
             }
             
-            if (Utils.IsOutOfBounds(nextHorizontalPos, this) || Utils.WhatSquareAmI(nextHorizontalPos, out int c, out int d) == Board.Status.Captured)
+            if (Utils.IsOutOfBounds(nextHorizontalPos, this) || Utils.CurrentSquareStatus(nextHorizontalPos, out int c, out int d) == Board.Status.Captured)
             {
                 velocity *= new Vector2(1, -1);
             }

@@ -21,9 +21,11 @@ public class Board : Sprite
 
     #region Variables
 
+    private int magicNumber = 8;
+    
     // const
-    public const int numOfRows = 20;
-    public const int numOfColumns = 20;
+    public static int numOfRows;
+    public static int numOfColumns;
     private const string spriteName = "captured-area";
     
     // Private
@@ -49,6 +51,9 @@ public class Board : Sprite
 
     public Board() : base(spriteName)
     {
+        numOfRows = Game1.ScreenHeight/magicNumber;
+        numOfColumns = Game1.ScreenWidth/magicNumber;
+        
         ResetBoard();
         capturedBackground.rows = numOfRows;
         capturedBackground.columns = numOfColumns;
@@ -67,7 +72,7 @@ public class Board : Sprite
             for (int j = 0; j < numOfColumns; j++)
             {
                 notCaptured.Add(new Vector2(i, j));
-                if (i == 0 || i == numOfRows - 1 || j == 0 || j == numOfColumns - 1)
+                if (i < magicNumber || i > numOfRows - magicNumber || j < magicNumber || j > numOfColumns - magicNumber)
                 {
                     CaptureSquare(i, j);
                 }

@@ -11,11 +11,17 @@ public class GameplayManager : IUpdatable
 
     private  int playerBaseLives = 3;
     private static int currentPlayerLives;
+    
+    public static int PlayerLives => currentPlayerLives;
+    public static float PrecentCleared => boardPrecentCleared;
+
+    private static float boardPrecentCleared;
 
     private LevelManager levelManager;
     
     public static Action playerDied;
 
+    
 
     public GameplayManager()
     {
@@ -51,7 +57,7 @@ public class GameplayManager : IUpdatable
         player.tm.position = player.spawnPoint;
         
         currentPlayerLives--;
-        UIMain.RemainingLives(currentPlayerLives);
+        UIManager.RemainingLives(currentPlayerLives);
         if (currentPlayerLives == 0)
         {
             // game over
@@ -61,12 +67,12 @@ public class GameplayManager : IUpdatable
     private static void OnPlayerReachedSafety()
     {
         int requiredPrecent = LevelManager.currentLevel.goalPercent;
-        if (Board.IsGoalPercentageReached(requiredPrecent, out float currentPrecent))
+        if (Board.IsGoalPercentageReached(requiredPrecent, out boardPrecentCleared))
         {
             //player.canMove = false;
             LevelManager.NextLevel();
         }
-        UIMain.ClaimedPercentage((int)currentPrecent, requiredPrecent);
+        UIManager.ClaimedPercentage((int)boardPrecentCleared, requiredPrecent);
     }
 
     public void OnNextLevel()

@@ -8,7 +8,7 @@ public static class DFS
 {
     public static void MarkAllEnemySquares(Vector2 pos)
     {
-        Board.grid[(int)pos.X, (int)pos.Y] = Board.Status.Enemy;
+        Board.grid[(int)pos.Y, (int)pos.X] = Board.Status.Enemy;
         
         Stack<Vector2> toCheck = new Stack<Vector2>();
         AddNeighbours(pos, toCheck);
@@ -18,9 +18,9 @@ public static class DFS
             Vector2 neighbour = toCheck.Pop();
             int xPos = (int)neighbour.X;
             int yPos = (int)neighbour.Y;
-            if (Board.grid[xPos,yPos] == Board.Status.Uncaptured)
+            if (Board.grid[yPos,xPos] == Board.Status.Uncaptured)
             {
-                Board.grid[xPos, yPos] = Board.Status.Enemy;
+                Board.grid[yPos, xPos] = Board.Status.Enemy;
                 AddNeighbours(neighbour, toCheck);
             }
         }
