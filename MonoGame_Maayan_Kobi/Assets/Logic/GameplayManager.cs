@@ -64,8 +64,8 @@ public class GameplayManager : IUpdatable
 
     public static void PlayPlayerDeathSequence()
     {
-        AudioManager.PlaySoundEffect(AudioManager.playerDeathSXF);
         playerDied?.Invoke();
+        AudioManager.PlaySoundEffect(AudioManager.playerDeathSXF);
         player.tm.position = player.spawnPoint;
         
         currentPlayerLives--;

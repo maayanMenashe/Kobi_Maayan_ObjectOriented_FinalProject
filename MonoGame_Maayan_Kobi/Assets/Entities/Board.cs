@@ -60,7 +60,6 @@ public class Board : Sprite
         capturedBackground.texture = texture;
         singleSquareWidth = Game1.ScreenWidth / numOfColumns;
         singleSquareHeight = Game1.ScreenHeight / numOfRows;
-        GameplayManager.playerDied += OnPlayerDeath;
     }
 
     #endregion
@@ -91,6 +90,7 @@ public class Board : Sprite
         touched.Clear();
         grid = new Status[numOfRows, numOfColumns];
         InitBoard();
+        GameplayManager.playerDied += OnPlayerDeath;
     }
 
     public static void CaptureSquare(int row, int column)
